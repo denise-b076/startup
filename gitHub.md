@@ -3,10 +3,10 @@ These notes detail knowledge learned about GitHub, including commits, cloning, a
 
 ## Cloning
 By creating a repository on GitHub, you have a way to organize your commits. By creating a clone of the repository, you can make edits on your local computer *without editing the GitHub directly*. Once this is done, editing code takes on a cycle of:
-    1. Pull new changes from GitHub.
-    2. Make changes to the code.
-    3. Commit the changes through Git.
-    4. Push the changes to GitHub
+1. Pull new changes from GitHub.
+2. Make changes to the code.
+3. Commit the changes through Git.
+4. Push the changes to GitHub
 
 Cloning and making edits to the clone first and foremost ensures commits made are clean and more organized before being published to GitHub.
 
