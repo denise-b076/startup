@@ -20,9 +20,9 @@ For this deliverable I did the following. I checked the box `[x]` and added a de
 
 - [ ] Proper use of Markdown
 - [x] A concise and compelling elevator pitch
-- [ ] Description of key features
+- [x] Description of key features
 - [ ] Description of how you will use each technology
-- [ ] One or more rough sketches of your application. Images must be embedded in this file using Markdown image references.
+- [x] One or more rough sketches of your application. Images must be embedded in this file using Markdown image references.
 
 ### Elevator pitch
 
@@ -47,9 +47,13 @@ sequenceDiagram
 
 ### Key features
 
-- Describe your key feature
-- Describe your key feature
-- Describe your key feature
+- Secure login over HTTPS
+- Ability to randomly generate palettes with 4 colors
+- Display appearance and hexadecimal color codes of generated colors
+- Ability to lock colors from being rerolled
+- Save palettes under user-generated title
+- Store user-created palettes in gallery along with date created
+- Palettes created by most recent users displayed in 'Inspire' tab
 
 ### Technologies
 
