@@ -13,7 +13,7 @@
 [Information found here](notes.md)
 
 ## Specification Notes
-In order to stay organized and consistent while creating a web application, it is important to specify what it should be doing, evn before beginnign to code. This can include many elements, but the ones I will be referencing include:
+In order to stay organized and consistent while creating a web application, it is important to specify what it should be doing, even before beginning to code. This can include many elements, but the ones I will be referencing include:
 
 1. [An elevator pitch](#elevator-pitch)
 2. [A design](#design)
@@ -27,7 +27,7 @@ The purpose of an elevator pitch is to provide a concise explanation for what pr
 ### Design
 The design does not need to be very complicated initially, but gives you a blueprint for what your application should generally look like. This includes outlining where all your _visible_ features should lie. By creating a design early on, you provide yourself with a solid outline for HTML and CSS.
 ### Key Features
-
+This is one of the _most important_ things to identify. Key features establish clear goals for the application to accomplish, and can act as checkpoints for progress. While the elevator pitch provides the framework of an application, key features flesh it out by breaking down the steps necessary to carry out the pitch's solution. 
 ### Technologies
 
 ## AWS Notes
