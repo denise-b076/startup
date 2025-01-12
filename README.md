@@ -1,4 +1,4 @@
-# Your startup name here
+# Tint-Hint
 
 [My Notes](notes.md)
 
