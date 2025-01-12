@@ -25,7 +25,7 @@ Each of these aspects help maintain a clear idea of what you are attempting to d
 ### Elevator Pitch
 The purpose of an elevator pitch is to provide a concise explanation for what problem your application is trying to solve and how said application solves it. It can be very useful in helping you quickly identify what you want your application to accomplish before delving into _how_ to accomplish it. Additionaly, it ensures you maintain a mindset of how _others_ will interact with what you create, maintaing a clear purpose in what you are doing. 
 ### Design
-
+The design does not need to be very complicated initially, but gives you a blueprint for what your application should generally look like. This includes outlining where all your _visible_ features should lie. By creating a design early on, you provide yourself with a solid outline for HTML and CSS.
 ### Key Features
 
 ### Technologies
