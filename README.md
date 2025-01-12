@@ -30,7 +30,7 @@ Have you ever made a solid design for your webpage or artwork, but you have no i
 
 ### Design
 
-![Design image](placeholder.png)
+![Design image](web_design.png)
 
 Below is a sequence diagram showing how people interact with the backend when creating palettes.
 
