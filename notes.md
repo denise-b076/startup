@@ -29,7 +29,7 @@ The design does not need to be very complicated initially, but gives you a bluep
 ### Key Features
 This is one of the _most important_ things to identify. Key features establish clear goals for the application to accomplish, and can act as checkpoints for progress. While the elevator pitch provides the framework of an application, key features flesh it out by breaking down the steps necessary to carry out the pitch's solution. 
 ### Technologies
-
+Once you understand what key features your application will have, you should identify what technologies you will be using to achieve said features. By specifying what each technology is going to do, you are better able to outline what you need to accomplish as you create your application. These technologies can differ based on the complexity of your application, but some include HTML, React, WebSocket, and JavaScript.
 ## AWS Notes
 
 Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
