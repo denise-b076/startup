@@ -32,13 +32,17 @@ Have you ever made a solid design for your webpage or artwork, but you have no i
 
 ![Design image](placeholder.png)
 
-Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+Below is a sequence diagram showing how people interact with the backend when creating palettes.
 
 ```mermaid
 sequenceDiagram
-    actor You
-    actor Website
-    You->>Website: Replace this with your design
+    actor Tom
+    actor Brady
+    Tom->>Server: "Game Day" palette
+    Server -->>Brady: "Game Day" palette
+    Brady->>Server: "Cottagecore" palette
+    Server -->>Tom: "Cottagecore" palette
+
 ```
 
 ### Key features
