@@ -18,10 +18,10 @@ A brief description of the application here. Lorem ipsum dolor sit amet, consect
 
 For this deliverable I did the following. I checked the box `[x]` and added a description for things I completed.
 
-- [ ] Proper use of Markdown
+- [x] Proper use of Markdown
 - [x] A concise and compelling elevator pitch
 - [x] Description of key features
-- [ ] Description of how you will use each technology
+- [x] Description of how you will use each technology
 - [x] One or more rough sketches of your application. Images must be embedded in this file using Markdown image references.
 
 ### Elevator pitch
@@ -59,12 +59,17 @@ sequenceDiagram
 
 I am going to use the required technologies in the following ways.
 
-- **HTML** - Description here
-- **CSS** - Description here
-- **React** - Description here
-- **Service** - Description here
-- **DB/Login** - Description here
-- **WebSocket** - Description here
+- **HTML** - Uses correct HTML structure for application. Four HTML pages. Login page, palette generation page, gallery page, and recent user-created palette page.
+- **CSS** - Application styling that looks good on different screen sizes, uses good whitespace, color choice and contrast.
+- **React** - Provides login, display of palette, generating new palette, locking colors in palette, giving title to palette, display of other users palettes, and use of React for routing and components.
+- **Service** - Backend service with endpoints for:
+    - login
+    - saving palette
+    - retrieving palettes, names, and dates
+    - retrieving palettes created by other users
+    - displaying an artwork on the login page using the https://api.artic.edu/docs/ service
+- **DB/Login** - Store users, palettes, palette names, and date created in database. Register and login users. Credentials securely stored in database. Can't save palettes unless authenticated.
+- **WebSocket** - As users save palettes, they are displayed to other users in recent user-created palette page.
 
 ## 🚀 AWS deliverable
 
