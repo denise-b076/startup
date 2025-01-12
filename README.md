@@ -26,7 +26,7 @@ For this deliverable I did the following. I checked the box `[x]` and added a de
 
 ### Elevator pitch
 
-Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+Have you ever made a solid design for your webpage or artwork, but you have no idea where to start in terms of a color palette? Tint-Hint is an application that allows you to simply pull out your device and click a button to generate a random color pallete. If there are some colors you like and not others, you can lock some of the hues and reroll others. Once you have a color palette you are satisfied with, you can give it a name and save it in your gallery to access whenever you want. You can even gain inspiration from the palettes that other recent users create.
 
 ### Design
 
