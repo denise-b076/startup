@@ -35,7 +35,7 @@ This is one of the _most important_ things to identify. Key features establish c
 Once you understand what key features your application will have, you should identify what technologies you will be using to achieve said features. By specifying what each technology is going to do, you are better able to outline what you need to accomplish as you create your application. These technologies can differ based on the complexity of your application, but some include HTML, React, WebSocket, and JavaScript.
 
 ## AWS Notes
-AWS, or Amazon Web Services, has many services that you can use to rent and set up a web server for your application. The two that I have used so far are EC2 and Route 53. Below are my notes on each of them.
+AWS, or Amazon Web Services, has many services that you can use to rent and set up a web server for your application. The two that I have used so far are [EC2](#ec2) and [Route 53](#route-53). Below are my notes on each of them.
 
 ### EC2
 EC2 allows you to create an instance on an AWS server. For this class, we are using a server in Virginia, but they have other regions available. To launch your instance, you first need to select an Amazon Machine Image (AMI) to use as the base for your server. It contains the software configuration (operating system, application server, and applications) required to
@@ -46,6 +46,13 @@ launch your instance. Then you select an instance type that depends on how much 
 ```
 
 The IP address for my server is 52.5.134.233
+
+### Route 53
+Route 53 is what allows you to register domain names so those who access your application don't have to remember the IP address to access its webpage every time. It also allows you to create a secure (HTTPS) connection to your application, which you can't do with an IP address. It also lets you host your domain on Amazon's DNS servers, and create DNS records. 
+
+First, to register a domain, you need to choose the TLD and root domain you want. The price of TLD's are different based on their popularity and credibility, so `.com` TLDs cost more than `.click` TLDs do. The root domain consists of the word or words you want to be searched with your domain. For example, my root domain is 'puroguramu', which consists of the Japanese anglicized katakana characters for プログラム, which means computer program or software. Once you find a domain you like that is available, you fill out your contact details and complete your order. 
+
+Once your domain has been registered, you can use it to create DNS records that will map domain names to IP addresses (A records) or other domain names (CNAME records). By defining both a record for your root domain and a wildcard record for any subdomain of your root domain you can navigate to your server with either your domain name or a subdomain. For example, my web server can be reached by navigating the browser to puroguramu.click, simon.puroguramu.click, or startup.puroguramu.click
 
 ## HTML Notes
 
