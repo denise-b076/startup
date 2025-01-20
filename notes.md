@@ -41,9 +41,9 @@ AWS, or Amazon Web Services, has many services that you can use to rent and set 
 EC2 allows you to create an instance on an AWS server. For this class, we are using a server in Virginia, but they have other regions available. To launch your instance, you first need to select an Amazon Machine Image (AMI) to use as the base for your server. It contains the software configuration (operating system, application server, and applications) required to
 launch your instance. Then you select an instance type that depends on how much power you want and how much you want to spend. Then, you need to create a key pair so you can secure shell (ssh) into the server. Then, you auto-assigna public IP address, and select your security settings. Finally, after selecting launch instance, you can now find the server under the public IP address. You can also remote shell into the server using the key pair you created and your IP address like so:
 
-'''
+```
 ➜  ssh -i [key pair file] ubuntu@[ip address]
-'''
+```
 
 The IP address for my server is 52.5.134.233
 
