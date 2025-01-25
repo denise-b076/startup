@@ -2,7 +2,7 @@
 
 [My Notes](notes.md)
 
-Tint-Hint is a pallette generator that can randomly generate colors and save them to their gallery to be shared along with other recent users' palletes.
+Tint-Hint is a pallette generator that can randomly generate colors and save them to a user's gallery to be shared along with other recent users' palletes.
 
 
 > [!NOTE]
