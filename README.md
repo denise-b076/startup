@@ -82,14 +82,14 @@ For this deliverable I did the following. I checked the box `[x]` and added a de
 For this deliverable I did the following. I checked the box `[x]` and added a description for things I completed.
 
 - [x] **HTML pages** - Four HTML pages representing the login, creating palettes, saving palettes, and viewing the recent palettes of other users.
-- [ ] **Proper HTML element usage** - I did not complete this part of the deliverable.
-- [ ] **Links** - I did not complete this part of the deliverable.
-- [ ] **Text** - I did not complete this part of the deliverable.
-- [ ] **3rd party API placeholder** - I did not complete this part of the deliverable.
-- [ ] **Images** - I did not complete this part of the deliverable.
-- [ ] **Login placeholder** - I did not complete this part of the deliverable.
-- [ ] **DB data placeholder** - I did not complete this part of the deliverable.
-- [ ] **WebSocket placeholder** - I did not complete this part of the deliverable.
+- [x] **Proper HTML element usage** - Header, main, and footer elements are used to organize the pages, tables are used to organize the elements within those pages, buttons are used for interactive elements, div elements contain elements grouped together, and so forth.
+- [x] **Links** - All pages are linked in the header of each page. Additionally, the login page links to the palette generator page, the palette generator page links to the gallery, and both the gallery and inspire pages link back to the palette generator
+- [X] **Text** - The login page has welcome text, the palette generator page has hexcodes and the user's name, the gallery has palette names and the date those palettes were created, and the inspire tab has user names, palette names, and dates. 
+- [x] **3rd party API placeholder** - On the login page there is a placeholder image, which will be a random artwork from the https://api.artic.edu/docs/ service in the final application
+- [X] **Images** - There is a placeholder image for the artwork on the login page. Also, the palette generator page, gallery page, and inspire page all have svg images for the colors in their palettes.
+- [x] **Login placeholder** - The login page has inputs for email and password, as well as buttons to login or create an account.
+- [x] **DB data placeholder** - User name will replace placeholder name on palette generator page. User-created palettes and dates they were created will be stored in the gallery page, with placeholder names, colors, and dates there currently.
+- [x] **WebSocket placeholder** - The inspire page has placeholders for recent users, their palettes, and the dates they created them.
 
 ## 🚀 CSS deliverable
 
