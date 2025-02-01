@@ -6,6 +6,16 @@ body {
   
   header {
     flex: 0 70px;
+    background: linear-gradient(to right, 
+    rgb(31, 30, 30), 
+    rgb(31, 30, 30), 
+    rgb(102, 21, 179), 
+    rgb(10, 82, 176), 
+    rgb(26, 114, 6), 
+    rgb(245, 221, 69), 
+    rgb(243, 145, 66), 
+    rgb(243, 87, 84)
+    );
   }
   
   main {
@@ -18,6 +28,16 @@ body {
   
   footer {
     flex: 0 30px;
+    background: linear-gradient(to right, 
+    rgb(31, 30, 30), 
+    rgb(31, 30, 30), 
+    rgb(102, 21, 179), 
+    rgb(10, 82, 176), 
+    rgb(26, 114, 6), 
+    rgb(245, 221, 69), 
+    rgb(243, 145, 66), 
+    rgb(243, 87, 84)
+    );
   }
   
   menu {
