@@ -57,3 +57,16 @@ Once your domain has been registered, you can use it to create DNS records that 
 ## HTML Notes
 
 HTML is the main structure of a website. It allows you to plot a general layout for your application, and put placeholders for data will be later on. It doesn't look nice on its own, but is crucial to ensuring a website has the elements it needs to work. My application uses many elements, such as `<div>`, `<form>`, and `<table>`.
+
+## CSS Notes
+CSS, or Cascading Style Sheets, allow developers to improve the look of their application, whether for accessibility or aesthetic purposes. This can be done in 3 ways:
+
+1. directly within an HTML element
+2. at the top of an HTML document
+3. in a separate CSS file
+
+The most common way is through a separate stylesheet which is referenced by the HTML file. There can be multiple stylesheets for a single aplication, such as mine which has a `main.css` for overall style, and three other CSS sheets for specific styling on each page.
+
+You can also reference other public stylesheets, known as CSS Frameworks, to give your website a more unified appearance and increase accessibilty. One such framework is Bootstrap, which I use throughout my application such as in buttons and table. These framework styles are accessed through giving your elements a specific class supported by the framework, and can be overridden if there are specific parts you would like to change, such as `color`.
+
+Some parts of CSS focus on how an object looks, such as `background-color` or `font-style`. Others focus on an object's position on the page, such as `display:flex` or `padding`. By putting all of these elements together, you can make a webpage that is much more appealing to the user's eye.
