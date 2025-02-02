@@ -95,7 +95,7 @@ For this deliverable I did the following. I checked the box `[x]` and added a de
 
 For this deliverable I did the following. I checked the box `[x]` and added a description for things I completed.
 
-- [x] **Header, footer, and main content body** - The header, footer, and main content body have all had style changes, such as background color, font style, etc.
+- [x] **Header, footer, and main content body** - The header, footer, and main content body have all had style changes, such as background color, font style, etc, and all contain proper elements, such as a GitHub link in the footer, navigational elements in the header, etc.
 - [x] **Navigation elements** - Each of the elements has been formatted, and is able to navigate to each of my four webpages.
 - [x] **Responsive to window resizing** - The header and footer disappear when the window gets too short, the colors on the palette maker page change position when the window gets too thin, elements are centered even as the size of the page changes, palettes fill the boxes of the table, and change size, etc. 
 - [x] **Application elements** - My login screen has buttons and a div box to contain them, my palette maker page contains div elements for the palettes, buttons, and a text-input box, and both my gallery and inspire pages have tables. All of the listed and unlisted elements have been styled with CSS.
