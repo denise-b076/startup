@@ -90,6 +90,13 @@ body {
   footer a {
     float: right;
   }
+
+  @media (orientation: portrait) {
+    .picture_box{
+      flex: 0 70vh;
+      max-width: 100vw;
+    }
+  }
   
   @media (max-height: 600px) {
     header {
