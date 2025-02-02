@@ -51,6 +51,19 @@ body {
     border-radius: 15px;
     opacity: 0.9;
     position: absolute;
+    animation-name: "fade-in";
+    animation-duration: 1.0s;
+  }
+
+  @keyframes fade-in {
+    from {
+        transform: translateY(-10%);
+        opacity: 0;
+    }
+    to {
+        transform: translateY(0%);
+        opacity: 0.9;
+    }
   }
   
   menu {
