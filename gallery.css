@@ -9,6 +9,8 @@
 
 #gallery_table {
     width: 90%;
+    animation-name: "fade-in";
+    animation-duration: 1s;
 }
 
 #color_one{
