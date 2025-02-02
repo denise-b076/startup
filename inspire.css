@@ -1,0 +1,76 @@
+.color_palette {
+    display: flex;
+}
+
+.inspire_color {
+ flex: 1;
+ padding: 10px;
+}
+
+#inspire_table {
+    width: 90%
+}
+
+#color_one{
+    background-color: #7e5644;
+}
+
+#color_two{
+    background-color: #dddddd;
+}
+
+#color_three{
+    background-color: #87fd45;
+}
+
+#color_four{
+    background-color: #000000;
+}
+
+#color_five{
+    background-color: #01aa01;
+}
+
+#color_six{
+    background-color: #0000aa;
+}
+
+#color_seven{
+    background-color: #7e5644;
+}
+
+#color_eight{
+    background-color: #ffaa00;
+}
+
+#color_nine{
+    background-color: #000000;
+}
+
+#color_ten{
+    background-color: #000000;
+}
+
+#color_eleven{
+    background-color: #000000;
+}
+
+#color_twelve{
+    background-color: #000000;
+}
+
+#color_thirteen{
+    background-color: #000065;
+}
+
+#color_fourteen{
+    background-color: #ffdf00;
+}
+
+#color_fifteen{
+    background-color: #aa1111;
+}
+
+#color_sixteen{
+    background-color: #bcccff;
+}
