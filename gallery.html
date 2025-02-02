@@ -6,6 +6,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <title>Tint-Hint</title>
         <link rel="stylesheet" href="main.css" />
+        <link rel="stylesheet" href="gallery.css" />
         <link 
         href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" 
         rel="stylesheet" 
@@ -26,103 +27,53 @@
             </nav>
         </header>
 
-        <main>
-            <table>
-                <tr>
-                    <td><b>Palette Name</b></td>
-                    <td><b>Colors</b></td>
-                    <td><b>Date Created</b></td>
-                </tr>
-                <tr>
-                    <td><a href="palette_maker.html">"Clown Culture"</a></td>
-                    <td>
-                        <table>
-                            <tr>
-                                <td>
-                                    <svg aria-hidden="true" viewBox="0 0 10 10" height="10" width="10">
-                                        <path d="M0,0 0,10 10,10 10,0 0,0" fill="#ff0000" />
-                                    </svg>                         
-                                </td>
-                                <td>
-                                    <svg aria-hidden="true" viewBox="0 0 10 10" height="10" width="10">
-                                        <path d="M0,0 0,10 10,10 10,0 0,0" fill="#ba34cd" />
-                                    </svg>                        
-                                </td>
-                                <td>
-                                    <svg aria-hidden="true" viewBox="0 0 10 10" height="10" width="10">
-                                        <path d="M0,0 0,10 10,10 10,0 0,0" fill="#87fd45" />
-                                    </svg>                        
-                                </td>
-                                <td>
-                                    <svg aria-hidden="true" viewBox="0 0 10 10" height="10" width="10">
-                                        <path d="M0,0 0,10 10,10 10,0 0,0" fill="#cccccc" />
-                                    </svg>
-                                </td>
-                            </tr>
-                        </table>                        
-                    </td>
-                    <td>1/25/25</td>
-                </tr>
-                <tr>
-                    <td><a href="palette_maker.html">"Emerald City"</a></td>
-                    <td>
-                        <table>
-                            <tr>
-                                <td>
-                                    <svg aria-hidden="true" viewBox="0 0 10 10" height="10" width="10">
-                                        <path d="M0,0 0,10 10,10 10,0 0,0" fill="#3fffaa" />
-                                    </svg>                         
-                                </td>
-                                <td>
-                                    <svg aria-hidden="true" viewBox="0 0 10 10" height="10" width="10">
-                                        <path d="M0,0 0,10 10,10 10,0 0,0" fill="#01aa01" />
-                                    </svg>                        
-                                </td>
-                                <td>
-                                    <svg aria-hidden="true" viewBox="0 0 10 10" height="10" width="10">
-                                        <path d="M0,0 0,10 10,10 10,0 0,0" fill="#87ed45" />
-                                    </svg>                        
-                                </td>
-                                <td>
-                                    <svg aria-hidden="true" viewBox="0 0 10 10" height="10" width="10">
-                                        <path d="M0,0 0,10 10,10 10,0 0,0" fill="#03ff14" />
-                                    </svg>
-                                </td>
-                            </tr>
-                        </table>                        
-                    </td>
-                    <td>12/25/24</td>
-                </tr>
-                <tr>
-                    <td><a href="palette_maker.html">"Bluesky"</a></td>
-                    <td>
-                        <table>
-                            <tr>
-                                <td>
-                                    <svg aria-hidden="true" viewBox="0 0 10 10" height="10" width="10">
-                                        <path d="M0,0 0,10 10,10 10,0 0,0" fill="#eeeeee" />
-                                    </svg>                         
-                                </td>
-                                <td>
-                                    <svg aria-hidden="true" viewBox="0 0 10 10" height="10" width="10">
-                                        <path d="M0,0 0,10 10,10 10,0 0,0" fill="#1022d3" />
-                                    </svg>                        
-                                </td>
-                                <td>
-                                    <svg aria-hidden="true" viewBox="0 0 10 10" height="10" width="10">
-                                        <path d="M0,0 0,10 10,10 10,0 0,0" fill="#22d2ff" />
-                                    </svg>                        
-                                </td>
-                                <td>
-                                    <svg aria-hidden="true" viewBox="0 0 10 10" height="10" width="10">
-                                        <path d="M0,0 0,10 10,10 10,0 0,0" fill="#bcccff" />
-                                    </svg>
-                                </td>
-                            </tr>
-                        </table>                        
-                    </td>
-                    <td>11/12/24</td>
-                </tr>
+        <main class="container-fluid text-center">
+            <table class="table table-striped-columns">
+                <thead class="table-dark">
+                    <tr>
+                        <th><b>Palette Name</b></th>
+                        <th><b>Colors</b></td>
+                        <th><b>Date Created</b></th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><a href="palette_maker.html">"Clown Culture"</a></td>
+                        <td class="color_data">
+                            <div class="color_palette">
+                                <div id="color_one" class="gallery_color"></div>                        
+                                <div id="color_two" class="gallery_color"></div>                       
+                                <div id="color_three" class="gallery_color"></div>                       
+                                <div id="color_four" class="gallery_color"></div>
+                            </div>                        
+                        </td>
+                        <td>1/25/25</td>
+                    </tr>
+                    <tr>
+                        <td><a href="palette_maker.html">"Emerald City"</a></td>
+                        <td class="color_data">
+                            <div class="color_palette">
+                                <div id="color_five" class="gallery_color"></div>                        
+                                <div id="color_six" class="gallery_color"></div>                       
+                                <div id="color_seven" class="gallery_color"></div>                       
+                                <div id="color_eight" class="gallery_color"></div>
+                            </div>                        
+                        </td>
+                        <td>12/25/24</td>
+                    </tr>
+                    <tr>
+                        <td><a href="palette_maker.html">"Bluesky"</a></td>
+                        <td class="color_data">
+                            <div class="color_palette">
+                                <div id="color_nine" class="gallery_color"></div>                        
+                                <div id="color_ten" class="gallery_color"></div>                       
+                                <div id="color_eleven" class="gallery_color"></div>                       
+                                <div id="color_twelve" class="gallery_color"></div>
+                            </div>                        
+                        </td>
+                        <td>11/12/24</td>
+                    </tr>
+                </tbody>
             </table>
         </main>
 
