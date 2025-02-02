@@ -1,0 +1,46 @@
+main {
+    align-items: initial;
+    justify-content: initial;
+}
+
+.content {
+    flex: 2;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+
+.users {
+    flex: 0;
+    padding: 20px 25px;
+    font-weight: 750;
+    font-size: 1.5em;
+    margin: 0;
+    animation-name: "fade-in";
+    animation-duration: 1s;
+}
+
+.palette_table {
+    padding: 1em 1.5em;
+}
+
+.interactive_buttons {
+    padding: 1em 1.5em;
+}
+
+#reroll {
+    background-color: rgb(212, 36, 36);
+    border-color: rgba(17, 79, 4, 0);
+    margin: 1em 0;
+}
+
+#reroll:hover {
+    background-color: rgb(168, 37, 37);
+    border-color: rgba(240, 248, 255, 0);
+}
+
+#reroll:active {
+    background-color: rgb(134, 37, 37);
+    border-color: rgba(240, 248, 255, 0);
+}
