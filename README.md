@@ -106,9 +106,14 @@ For this deliverable I did the following. I checked the box `[x]` and added a de
 
 For this deliverable I did the following. I checked the box `[x]` and added a description for things I completed.
 
-- [ ] **Bundled using Vite** - I did not complete this part of the deliverable.
-- [ ] **Components** - I did not complete this part of the deliverable.
-- [ ] **Router** - Routing between login and voting components.
+- [x] **Bundled using Vite** - done!
+- [x] **Components** - Login, palette maker, gallery table, and inspire table are all components with mocks for login, generating colors, gallery, inspire, and WebSocket.
+    - [x] **login** - When you press the login or create button it takes you to the palette maker page.
+    - [x] **palette maker** - When you press the save palette button it takes you to the gallery page. In the final application, this will save a palette in the gallery database and in the table.
+    - [x] **gallery** - When you press the name of a palette in the table, it takes you to the palette maker page. In the final application, this will fill the palette with the colors saved to the database
+    - [x] **inspire** - When you press the name of a user generated palette, it will take you to the palette maker page. In the final application, this will fill the palette with the colors saved by another user in the database.
+    - [x] **WebSocket** - I filled the inspire table with example palettes. In the final application, these palettes will be filled with WebSocket data.
+- [x] **Router** - Routing between login, palette maker, gallery, and inspire components
 
 ## 🚀 React part 2: Reactivity
 
