@@ -13,50 +13,50 @@
     animation-duration: 1s;
 }
 
-#color_one{
+#gallery_table #color_one{
     background-color: red;
 }
 
-#color_two{
+#gallery_table #color_two{
     background-color: green;
 }
 
-#color_three{
+#gallery_table #color_three{
     background-color: orange;
 }
 
-#color_four{
+#gallery_table #color_four{
     background-color: purple;
 }
 
-#color_five{
+#gallery_table #color_five{
     background-color: #3fffaa;
 }
 
-#color_six{
+#gallery_table #color_six{
     background-color: #01aa01;
 }
 
-#color_seven{
+#gallery_table #color_seven{
     background-color: #87ed45;
 }
 
-#color_eight{
+#gallery_table #color_eight{
     background-color: #03ff14;
 }
 
-#color_nine{
+#gallery_table #color_nine{
     background-color: #bbbbbb;
 }
 
-#color_ten{
+#gallery_table #color_ten{
     background-color: #1022d3;
 }
 
-#color_eleven{
+#gallery_table #color_eleven{
     background-color: #22d2ff;
 }
 
-#color_twelve{
+#gallery_table #color_twelve{
     background-color: #bcccff;
 }

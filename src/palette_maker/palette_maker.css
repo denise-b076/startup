@@ -1,4 +1,4 @@
-main {
+.palette_main {
     align-items: initial;
 }
 
@@ -46,19 +46,19 @@ main {
     color: rgb(31, 30, 30);
 }
 
-#color_one {
+.palette_table #color_one {
     background-color: red;
 }
 
-#color_two {
+.palette_table #color_two {
     background-color: #ba34cd;
 }
 
-#color_three {
+.palette_table #color_three {
     background-color: #87fd45;
 }
 
-#color_four {
+.palette_table #color_four {
     background-color: #cccccc;
 }
 
