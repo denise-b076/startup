@@ -9,7 +9,7 @@
 
 #inspire_table {
     width: 90%;
-    animation-name: "fade-in";
+    animation-name: "fade-in-full-opacity";
     animation-duration: 1s;
 }
 
