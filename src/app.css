@@ -1,112 +1,107 @@
-body {
-    display: flex;
-    flex-direction: column;
-    min-width: 375px;
+.body {
+  display: flex;
+  flex-direction: column;
+  min-width: 375px;
+}
+
+header {
+  flex: 0 70px;
+  background: linear-gradient(to right, 
+  rgb(31, 30, 30), 
+  rgb(31, 30, 30), 
+  rgb(102, 21, 179), 
+  rgb(10, 82, 176), 
+  rgb(26, 114, 6), 
+  rgb(245, 221, 69), 
+  rgb(243, 145, 66), 
+  rgb(243, 87, 84)
+  );
+}
+
+main {
+  flex: 1 calc(100vh - 100px);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-around;
+  background-color: rgb(53, 51, 51);
+}
+
+footer {
+  flex: 0 30px;
+  background: linear-gradient(to right, 
+  rgb(31, 30, 30), 
+  rgb(31, 30, 30), 
+  rgb(102, 21, 179), 
+  rgb(10, 82, 176), 
+  rgb(26, 114, 6), 
+  rgb(245, 221, 69), 
+  rgb(243, 145, 66), 
+  rgb(243, 87, 84)
+  );
+}
+
+.picture_box {
+  flex: 1;
+}
+
+.login_form {
+  background: rgb(31, 30, 30);
+  padding: 1.5em;
+  border-radius: 15px;
+  opacity: 0.9;
+  position: absolute;
+  animation-name: "fade-in";
+  animation-duration: 1.0s;
+}
+
+@keyframes fade-in {
+  from {
+      transform: translateY(-10%);
+      opacity: 0;
   }
-  
+  to {
+      transform: translateY(0%);
+      opacity: 0.9;
+  }
+}
+
+menu {
+  flex: 1;
+  display: flex;
+  /*  overwrite Bootstrap so the menu does not wrap */
+  flex-direction: row !important;
+  list-style: none;
+}
+
+.navbar-brand {
+  padding-left: 0.3em;
+  border-bottom: solid rgb(182, 182, 182) thin;
+}
+
+menu .nav-item {
+  padding: 0 0.3em;
+}
+
+footer a {
+  float: right;
+}
+
+@media (orientation: portrait) {
+  .picture_box{
+    flex: 0 70vh;
+    max-width: 100vw;
+  }
+}
+
+@media (max-height: 600px) {
   header {
-    flex: 0 70px;
-    background: linear-gradient(to right, 
-    rgb(31, 30, 30), 
-    rgb(31, 30, 30), 
-    rgb(102, 21, 179), 
-    rgb(10, 82, 176), 
-    rgb(26, 114, 6), 
-    rgb(245, 221, 69), 
-    rgb(243, 145, 66), 
-    rgb(243, 87, 84)
-    );
+    display: none;
   }
-  
-  main {
-    flex: 1 calc(100vh - 100px);
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: space-around;
-    background-color: rgb(53, 51, 51);
-  }
-  
   footer {
-    flex: 0 30px;
-    background: linear-gradient(to right, 
-    rgb(31, 30, 30), 
-    rgb(31, 30, 30), 
-    rgb(102, 21, 179), 
-    rgb(10, 82, 176), 
-    rgb(26, 114, 6), 
-    rgb(245, 221, 69), 
-    rgb(243, 145, 66), 
-    rgb(243, 87, 84)
-    );
+    display: none;
   }
-
-  .picture_box {
-    flex: 1;
+  main {
+    flex: 1 100vh;
   }
-
-  .login_form {
-    background: rgb(31, 30, 30);
-    padding: 1.5em;
-    border-radius: 15px;
-    opacity: 0.9;
-    position: absolute;
-    animation-name: "fade-in";
-    animation-duration: 1.0s;
-  }
-
-  @keyframes fade-in {
-    from {
-        transform: translateY(-10%);
-        opacity: 0;
-    }
-    to {
-        transform: translateY(0%);
-        opacity: 0.9;
-    }
-  }
-  
-  menu {
-    flex: 1;
-    display: flex;
-    /*  overwrite Bootstrap so the menu does not wrap */
-    flex-direction: row !important;
-    list-style: none;
-  }
-  
-  .navbar-brand {
-    padding-left: 0.3em;
-    border-bottom: solid rgb(182, 182, 182) thin;
-  }
-  
-  menu .nav-item {
-    padding: 0 0.3em;
-  }
-
-  .nav-link {
-    color: red;
-  }
-
-  footer a {
-    float: right;
-  }
-
-  @media (orientation: portrait) {
-    .picture_box{
-      flex: 0 70vh;
-      max-width: 100vw;
-    }
-  }
-  
-  @media (max-height: 600px) {
-    header {
-      display: none;
-    }
-    footer {
-      display: none;
-    }
-    main {
-      flex: 1 100vh;
-    }
-  }
-  
+}
