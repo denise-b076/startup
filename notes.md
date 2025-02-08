@@ -70,3 +70,6 @@ The most common way is through a separate stylesheet which is referenced by the 
 You can also reference other public stylesheets, known as CSS Frameworks, to give your website a more unified appearance and increase accessibilty. One such framework is Bootstrap, which I use throughout my application such as in buttons and table. These framework styles are accessed through giving your elements a specific class supported by the framework, and can be overridden if there are specific parts you would like to change, such as `color`.
 
 Some parts of CSS focus on how an object looks, such as `background-color` or `font-style`. Others focus on an object's position on the page, such as `display:flex` or `padding`. By putting all of these elements together, you can make a webpage that is much more appealing to the user's eye.
+
+### React Notes
+React allows JavaScript and HTML to be used together. This includes routing pages and adding JavaScript functions to HTML elements.
