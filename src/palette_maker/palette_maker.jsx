@@ -1,4 +1,5 @@
 import React from 'react';
+import Button from 'react-bootstrap/Button';
 import "./palette_maker.css";
 
 export function Palette() {
@@ -55,14 +56,12 @@ export function Palette() {
             <button id="reroll" className="btn btn-secondary">
                 <h3>Reroll Colors</h3>
             </button>
-            <form method="get" action="gallery.html">
+            <form method="get">
                 <div className="input-group mb-3">
                     <span className="input-group-text">Palette Name</span>
                     <input className="form-control" type="text" placeholder="type here" />
                 </div>
-                <button className="btn btn-primary">
-                    Save to Gallery
-                </button>
+                <Button href="/gallery">Save to Gallery</Button>
             </form>
             </div>
         </div>

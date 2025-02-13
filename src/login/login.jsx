@@ -7,7 +7,7 @@ export function Login() {
         <img className="picture_box" src="placeholder.png" alt="random_artwork" />
         <div className="login_form">
         <h2>Welcome to Tint-Hint!</h2>
-        <form method="get" action="palette_maker.html">
+        <form method="get">
             <div className="input-group mb-3">
                 <span className="input-group-text">@</span>
                 <input className="form-control" type="text" placeholder="your@email.com" />
