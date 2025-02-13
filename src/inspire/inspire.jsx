@@ -1,4 +1,5 @@
 import React from 'react';
+import Button from 'react-bootstrap/Button';
 import "./inspire.css";
 
 export function Inspire() {
@@ -16,7 +17,7 @@ export function Inspire() {
             <tbody>
                 <tr>
                     <td>Tom</td>
-                    <td><a href="palette_maker.html">"Game Day"</a></td>
+                    <td><Button id="inspire_button" variant="link" href="/palette_maker">"Game Day"</Button></td>
                     <td className="color_data">
                         <div className="color_palette">
                             <div id="color_one" className="inspire_color"></div>                        
@@ -29,7 +30,7 @@ export function Inspire() {
                 </tr>
                 <tr>
                     <td>Brady</td>
-                    <td><a href="palette_maker.html">"Football"</a></td>
+                    <td><Button id="inspire_button" variant="link" href="/palette_maker">"Football"</Button></td>
                     <td className="color_data">
                         <div className="color_palette">
                             <div id="color_five" className="inspire_color"></div>                        
@@ -42,7 +43,7 @@ export function Inspire() {
                 </tr>
                 <tr>
                     <td>Bruce</td>
-                    <td><a href="palette_maker.html">"Gotham Nights"</a></td>
+                    <td><Button id="inspire_button" variant="link" href="/palette_maker">"Gotham Nights"</Button></td>
                     <td className="color_data">
                         <div className="color_palette">
                             <div id="color_nine" className="inspire_color"></div>                        
@@ -55,7 +56,7 @@ export function Inspire() {
                 </tr>
                 <tr>
                     <td>Wayne</td>
-                    <td><a href="palette_maker.html">"Batcave"</a></td>
+                    <td><Button id="inspire_button" variant="link" href="/palette_maker">"Batcave"</Button></td>
                     <td className="color_data">
                         <div className="color_palette">
                             <div id="color_thirteen" className="inspire_color"></div>                        

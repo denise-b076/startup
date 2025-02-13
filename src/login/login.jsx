@@ -1,4 +1,5 @@
 import React from 'react';
+import Button from 'react-bootstrap/Button';
 
 export function Login() {
   return (
@@ -15,8 +16,8 @@ export function Login() {
                 <span className="input-group-text">🔒</span>
                 <input className="form-control" type="password" placeholder="password" />
             </div>
-            <button type="submit" className="btn btn-primary">Login</button>
-            <button type="submit" className="btn btn-secondary">Create</button>
+            <Button href="/palette_maker">Login</Button>
+            <Button className="btn btn-secondary" href="/palette_maker">Create</Button>
         </form>
         </div>            
     </main>

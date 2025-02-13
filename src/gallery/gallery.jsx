@@ -1,4 +1,5 @@
 import React from 'react';
+import Button from 'react-bootstrap/Button';
 import './gallery.css';
 
 export function Gallery() {
@@ -14,7 +15,7 @@ export function Gallery() {
             </thead>
             <tbody>
                 <tr>
-                    <td><a href="palette_maker.html">"Clown Culture"</a></td>
+                    <td><Button id="gallery_button" variant="link" href="/palette_maker">"Clown Culture"</Button></td>
                     <td className="color_data">
                         <div className="color_palette">
                             <div id="color_one" className="gallery_color"></div>                        
@@ -26,7 +27,7 @@ export function Gallery() {
                     <td>1/25/25</td>
                 </tr>
                 <tr>
-                    <td><a href="palette_maker.html">"Emerald City"</a></td>
+                    <td><Button id="gallery_button" variant="link" href="/palette_maker">"Emerald City"</Button></td>
                     <td className="color_data">
                         <div className="color_palette">
                             <div id="color_five" className="gallery_color"></div>                        
@@ -38,7 +39,7 @@ export function Gallery() {
                     <td>12/25/24</td>
                 </tr>
                 <tr>
-                    <td><a href="palette_maker.html">"Bluesky"</a></td>
+                    <td><Button id="gallery_button" variant="link" href="/palette_maker">"Bluesky"</Button></td>
                     <td className="color_data">
                         <div className="color_palette">
                             <div id="color_nine" className="gallery_color"></div>                        

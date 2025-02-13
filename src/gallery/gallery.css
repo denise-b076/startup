@@ -13,6 +13,10 @@
     animation-duration: 1s;
 }
 
+#gallery_button {
+    padding: 0;
+}
+
 #gallery_table #color_one{
     background-color: red;
 }

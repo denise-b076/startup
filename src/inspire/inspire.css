@@ -13,6 +13,10 @@
     animation-duration: 1s;
 }
 
+#inspire_button {
+    padding: 0;
+}
+
 #inspire_table #color_one{
     background-color: #7e5644;
 }
