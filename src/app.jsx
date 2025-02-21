@@ -6,8 +6,12 @@ import { Login } from './login/login';
 import { Gallery } from './gallery/gallery';
 import { Palette } from './palette_maker/palette_maker';
 import { Inspire } from './inspire/inspire';
+import { AuthState } from './login/authState';
 
 export default function App() {
+    const [userName, setUserName] = React.useState(localStorage.getItem('userName') || '');
+    const currentAuthState = userName ? AuthState.Authenticated : AuthState.Unauthenticated;
+    const [authState, setAuthState] = React.useState(currentAuthState);
     const [color, setColor] = React.useState({
         colorOne: "red",
         colorTwo: "red",
@@ -24,19 +28,28 @@ export default function App() {
                 <div className="navbar-brand" href="#">Tint-Hint</div>
                 <menu className="navbar-nav">
                     <li className="nav-item"><NavLink className="nav-link" to="">Login</NavLink></li>
-                    <li className="nav-item"><NavLink className="nav-link" to="palette_maker">Make Palettes</NavLink></li>
-                    <li className="nav-item"><NavLink className="nav-link" to="gallery">Gallery</NavLink></li>
-                    <li className="nav-item"><NavLink className="nav-link" to="inspire">Inspire</NavLink></li>
+                    {authState === AuthState.Authenticated && (<li className="nav-item"><NavLink className="nav-link" to="palette_maker">Make Palettes</NavLink></li>)}
+                    {authState === AuthState.Authenticated && (<li className="nav-item"><NavLink className="nav-link" to="gallery">Gallery</NavLink></li>)}
+                    {authState === AuthState.Authenticated && (<li className="nav-item"><NavLink className="nav-link" to="inspire">Inspire</NavLink></li>)}
                 </menu>
             </nav>
         </header>
 
         <Routes>
-            <Route path='/' element={<Login />} exact/>
+            <Route path='/' element=
+            {<Login 
+                userName={userName}
+                authState={authState}
+                onAuthChange={(userName, authState) => {
+                  setAuthState(authState);
+                  setUserName(userName);
+                }}
+            />} exact/>
             <Route path='/gallery' element={<Gallery />} />
             <Route path='/palette_maker' element={<Palette 
             color={color}
             setColor={setColor}
+            userName={userName}
             />} />
             <Route path='/inspire' element={<Inspire />} />
             <Route path='*' element={<NotFound />} />
