@@ -1,5 +1,4 @@
 import React from 'react';
-import Button from 'react-bootstrap/Button';
 
 import { Unauthenticated } from './unauthenticated';
 import { Authenticated } from './authenticated';
