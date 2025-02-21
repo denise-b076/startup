@@ -1,8 +1,11 @@
 import React from 'react';
 import Button from 'react-bootstrap/Button';
 import "./palette_maker.css";
+import { useNavigate } from 'react-router-dom';
 
 export function Palette({ color, setColor, userName}) {
+    const navigate = useNavigate();
+    const [paletteName, setPaletteName] = React.useState('none');
     const [lock, setLock] = React.useState({
         lockOne: false,
         lockColorOne: "white",
@@ -28,6 +31,25 @@ export function Palette({ color, setColor, userName}) {
     function changeColor(color_number) {
         let randomColor = Math.floor(Math.random() * 16777215).toString(16);
         setColor(color => ({...color, [color_number]: "#" + randomColor}));
+    }
+
+    async function savePalette(palette_name, color){
+        const date = new Date().toLocaleDateString();
+        const newPalette = { 
+            palette: palette_name, 
+            first: color.colorOne, 
+            second: color.colorTwo,
+            third: color.colorThree, 
+            fourth: color.colorFour,
+            date: date 
+        };
+        updateGallery(newPalette);
+    }
+    
+    function updateGallery(newPalette){
+        let gallery = JSON.parse(localStorage.getItem('gallery')) || [];
+        gallery.push(newPalette);
+        localStorage.setItem('gallery', JSON.stringify(gallery));
     }
 
   return (
@@ -107,9 +129,14 @@ export function Palette({ color, setColor, userName}) {
             <form method="get">
                 <div className="input-group mb-3">
                     <span className="input-group-text">Palette Name</span>
-                    <input className="form-control" type="text" placeholder="type here" />
+                    <input className="form-control" type="text" onChange={(e) => setPaletteName(e.target.value)} placeholder="type here" />
                 </div>
-                <Button href="/gallery">Save to Gallery</Button>
+                <Button onClick={() => {
+                    navigate('/gallery')
+                    savePalette(paletteName, color);
+                }
+                }>Save to Gallery
+                </Button>
             </form>
             </div>
         </div>
