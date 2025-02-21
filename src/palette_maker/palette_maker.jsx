@@ -2,7 +2,7 @@ import React from 'react';
 import Button from 'react-bootstrap/Button';
 import "./palette_maker.css";
 
-export function Palette({ color, setColor }) {
+export function Palette({ color, setColor, userName}) {
     const [lock, setLock] = React.useState({
         lockOne: false,
         lockColorOne: "white",
@@ -23,20 +23,18 @@ export function Palette({ color, setColor }) {
 
     const changeLock = (number, color) => {
         setLock(lock => ({...lock, [number]: !lock[number], [color]: lock[color] === "white" ? "grey" : "white"}));
-        console.log(lock[number]);
       };
 
     function changeColor(color_number) {
         let randomColor = Math.floor(Math.random() * 16777215).toString(16);
         setColor(color => ({...color, [color_number]: "#" + randomColor}));
-        console.log(randomColor);
     }
 
   return (
     <main className="palette_main">
         <div className="users">
             Hello
-            <span className="user-name"> Place Holder</span>
+            <span className="user-name"> {userName.split('@')[0]} </span>
         </div>
         <div className="content">
             <div className="palette_table">
