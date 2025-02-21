@@ -1,5 +1,6 @@
 .color_palette {
     display: flex;
+    border: solid thin rgb(90, 90, 90);
 }
 
 .gallery_color {

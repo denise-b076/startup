@@ -16,7 +16,8 @@ export default function App() {
         colorOne: "red",
         colorTwo: "red",
         colorThree: "red",
-        colorFour: "red"
+        colorFour: "red",
+        fromTable: false
     }
     );
 
@@ -45,7 +46,10 @@ export default function App() {
                   setUserName(userName);
                 }}
             />} exact/>
-            <Route path='/gallery' element={<Gallery />} />
+            <Route path='/gallery' element={<Gallery 
+            color={color}
+            setColor={setColor}
+            />} />
             <Route path='/palette_maker' element={<Palette 
             color={color}
             setColor={setColor}

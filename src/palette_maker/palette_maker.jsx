@@ -18,10 +18,16 @@ export function Palette({ color, setColor, userName}) {
     });
 
     React.useEffect(() => {
-        changeColor('colorOne');
-        changeColor('colorTwo');
-        changeColor('colorThree');
-        changeColor('colorFour');
+        if (!color.fromTable){
+            changeColor('colorOne');
+            changeColor('colorTwo');
+            changeColor('colorThree');
+            changeColor('colorFour');
+        }
+        else {
+            setColor(color => ({...color, fromTable: false}));
+        }
+        console.log(color.fromTable);
       }, []);
 
     const changeLock = (number, color) => {

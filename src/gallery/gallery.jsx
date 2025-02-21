@@ -1,9 +1,11 @@
 import React from 'react';
 import Button from 'react-bootstrap/Button';
 import './gallery.css';
+import { useNavigate } from 'react-router-dom';
 
-export function Gallery() {
+export function Gallery({ setColor }) {
     const [palettes, setPalettes] = React.useState([]);
+    const navigate = useNavigate();
 
     React.useEffect(() => {
         const galleryText = localStorage.getItem('gallery');
@@ -17,7 +19,13 @@ export function Gallery() {
         for (const [i, palette] of palettes.entries()) {
             galleryRows.push(
                 <tr key={i}>
-                    <td><Button id="gallery_button" variant="link" href="/palette_maker">{palette.name}</Button></td>
+                    <td><Button id="gallery_button" variant='link'
+                    onClick={() => {
+                    navigate('/palette_maker')
+                    setColor(() => ({colorOne: palette.first, colorTwo: palette.second, colorThree: palette.third, colorFour: palette.fourth, fromTable: true}));
+                }
+            }
+                >{palette.name}</Button></td>
                     <td className="color_data">
                         <div className="color_palette">
                             <div style={{ backgroundColor: palette.first }} className="gallery_color"></div>                        
