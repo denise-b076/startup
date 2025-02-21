@@ -8,6 +8,14 @@ import { Palette } from './palette_maker/palette_maker';
 import { Inspire } from './inspire/inspire';
 
 export default function App() {
+    const [color, setColor] = React.useState({
+        colorOne: "red",
+        colorTwo: "red",
+        colorThree: "red",
+        colorFour: "red"
+    }
+    );
+
   return (
     <BrowserRouter>
         <div className='body bg-dark text-light'>
@@ -26,7 +34,12 @@ export default function App() {
         <Routes>
             <Route path='/' element={<Login />} exact/>
             <Route path='/gallery' element={<Gallery />} />
-            <Route path='/palette_maker' element={<Palette />} />
+            <Route path='/palette_maker' element={<Palette 
+            colorOne={color.colorOne} 
+            colorTwo={color.colorTwo} 
+            colorThree={color.colorThree} 
+            colorFour={color.colorFour}
+            setColor={setColor()}/>} />
             <Route path='/inspire' element={<Inspire />} />
             <Route path='*' element={<NotFound />} />
         </Routes>
