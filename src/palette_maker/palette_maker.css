@@ -48,23 +48,6 @@
     color: rgb(31, 30, 30);
 }
 
-.palette_table #color_one {
-    background-color: red;
-}
-
-.palette_table #color_two {
-    background-color: #ba34cd;
-}
-
-.palette_table #color_three {
-    background-color: #87fd45;
-}
-
-.palette_table #color_four {
-    background-color: #cccccc;
-}
-
-
 .interactive_buttons {
     flex: 1;
     padding: 1em 1.5em;
