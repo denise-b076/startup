@@ -39,7 +39,8 @@ export default function App() {
             colorTwo={color.colorTwo} 
             colorThree={color.colorThree} 
             colorFour={color.colorFour}
-            setColor={setColor()}/>} />
+            setColor={setColor}
+            />} />
             <Route path='/inspire' element={<Inspire />} />
             <Route path='*' element={<NotFound />} />
         </Routes>
