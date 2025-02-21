@@ -35,10 +35,7 @@ export default function App() {
             <Route path='/' element={<Login />} exact/>
             <Route path='/gallery' element={<Gallery />} />
             <Route path='/palette_maker' element={<Palette 
-            colorOne={color.colorOne} 
-            colorTwo={color.colorTwo} 
-            colorThree={color.colorThree} 
-            colorFour={color.colorFour}
+            color={color}
             setColor={setColor}
             />} />
             <Route path='/inspire' element={<Inspire />} />

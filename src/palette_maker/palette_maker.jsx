@@ -2,61 +2,35 @@ import React from 'react';
 import Button from 'react-bootstrap/Button';
 import "./palette_maker.css";
 
-export function Palette() {
-    const [lockOne, setLockOne] = React.useState(false);
-    const [lockColorOne, setLockColorOne] = React.useState("white");
-    const [lockTwo, setLockTwo] = React.useState(false);
-    const [lockColorTwo, setLockColorTwo] = React.useState("white");
-    const [lockThree, setLockThree] = React.useState(false);
-    const [lockColorThree, setLockColorThree] = React.useState("white");
-    const [lockFour, setLockFour] = React.useState(false);
-    const [lockColorFour, setLockColorFour] = React.useState("white");
-    const [colorOne, setColorOne] = React.useState("red");
-    const [colorTwo, setColorTwo] = React.useState("red");
-    const [colorThree, setColorThree] = React.useState("red");
-    const [colorFour, setColorFour] = React.useState("red");
+export function Palette({ color, setColor }) {
+    const [lock, setLock] = React.useState({
+        lockOne: false,
+        lockColorOne: "white",
+        lockTwo: false,
+        lockColorTwo: "white",
+        lockThree: false,
+        lockColorThree: "white",
+        lockFour: false,
+        lockColorFour: "white"
+    });
 
     React.useEffect(() => {
-        changeColorOne();
-        changeColorTwo();
-        changeColorThree();
-        changeColorFour();
+        changeColor('colorOne');
+        changeColor('colorTwo');
+        changeColor('colorThree');
+        changeColor('colorFour');
       }, []);
 
-    const changeLockOne = () => {
-        setLockOne(lockOne === false ? true : false);
-        setLockColorOne(lockColorOne === "white" ? "grey" : "white");
-      };
-    const changeLockTwo = () => {
-        setLockTwo(lockTwo === false ? true : false);
-        setLockColorTwo(lockColorTwo === "white" ? "grey" : "white");
-      };
-    const changeLockThree = () => {
-        setLockThree(lockThree === false ? true : false);
-        setLockColorThree(lockColorThree === "white" ? "grey" : "white");
-      };
-    const changeLockFour = () => {
-        setLockFour(lockFour === false ? true : false);
-        setLockColorFour(lockColorFour === "white" ? "grey" : "white");
+    const changeLock = (number, color) => {
+        setLock({...lock, [number]: !lock[number], [color]: lock[color] === "white" ? "grey" : "white"});
+        console.log(lock[number]);
       };
 
-    function changeColorOne() {
-        let randomColorOne = Math.floor(Math.random() * 16777215).toString(16);
-        setColorOne("#" + randomColorOne);
+    function changeColor(color_number) {
+        let randomColor = Math.floor(Math.random() * 16777215).toString(16);
+        setColor({...color, [color_number]: "#" + randomColor});
+        console.log(randomColor);
     }
-    function changeColorTwo() {
-        let randomColorTwo = Math.floor(Math.random() * 16777215).toString(16);
-        setColorTwo("#" + randomColorTwo);
-    }
-    function changeColorThree() {
-        let randomColorThree = Math.floor(Math.random() * 16777215).toString(16);
-        setColorThree("#" + randomColorThree);
-    }
-    function changeColorFour() {
-        let randomColorFour = Math.floor(Math.random() * 16777215).toString(16);
-        setColorFour("#" + randomColorFour);
-    }
-
 
   return (
     <main className="palette_main">
@@ -66,69 +40,69 @@ export function Palette() {
         </div>
         <div className="content">
             <div className="palette_table">
-                <div id="color_one" className="colors" style={{background: colorOne}}>
+                <div id="color_one" className="colors" style={{background: color.colorOne}}>
                     <div className="color_info">
                         <button id="unlock" className="btn btn-secondary"
-                        style={{ background: lockColorOne}} 
+                        style={{ background: lock.lockColorOne}} 
                         onClick={() => {
-                            changeLockOne();
+                            changeLock('lockOne', 'lockColorOne');
                         }}>
                             <span>🔓</span>
                         </button>
                         <div className="color_name">
-                            <span className="color_hex">{colorOne}</span>
+                            <span className="color_hex">{color.colorOne}</span>
                         </div>
                     </div>
                 </div>
-                <div id="color_two" className="colors" style={{background: colorTwo}}>
+                <div id="color_two" className="colors" style={{background: color.colorTwo}}>
                     <div className="color_info">
                         <button id="unlock" className="btn btn-secondary"
-                        style={{ background: lockColorTwo}} 
+                        style={{ background: lock.lockColorTwo}} 
                         onClick={() => {
-                            changeLockTwo();
+                            changeLock('lockTwo', 'lockColorTwo');
                         }}>
                             <span>🔓</span>
                         </button>
                         <div className="color_name">
-                            <span className="color_hex">{colorTwo}</span>
+                            <span className="color_hex">{color.colorTwo}</span>
                         </div>
                     </div>
                 </div>
-                <div id="color_three" className="colors" style={{background: colorThree}}>
+                <div id="color_three" className="colors" style={{background: color.colorThree}}>
                     <div className="color_info">
                         <button id="unlock" className="btn btn-secondary"
-                        style={{ background: lockColorThree}} 
+                        style={{ background: lock.lockColorThree}} 
                         onClick={() => {
-                            changeLockThree();
+                            changeLock('lockThree', 'lockColorThree');
                         }}>
                             <span>🔓</span>
                         </button>
                         <div className="color_name">
-                            <span className="color_hex">{colorThree}</span>
+                            <span className="color_hex">{color.colorThree}</span>
                         </div>
                     </div>
                 </div>
-                <div id="color_four" className="colors" style={{background: colorFour}}>
+                <div id="color_four" className="colors" style={{background: color.colorFour}}>
                     <div className="color_info">
                         <button id="unlock" className="btn btn-secondary"
-                        style={{ background: lockColorFour}} 
+                        style={{ background: lock.lockColorFour}} 
                         onClick={() => {
-                            changeLockFour();
+                            changeLock('lockFour', 'lockColorFour');
                         }}>
                             <span>🔓</span>
                         </button>
                         <div className="color_name">
-                            <span className="color_hex">{colorFour}</span>
+                            <span className="color_hex">{color.colorFour}</span>
                         </div>
                     </div>
                 </div>
             </div>
             <div className="interactive_buttons">
             <button id="reroll" className="btn btn-secondary" onClick={() => {
-                {!lockOne && changeColorOne();}
-                {!lockTwo && changeColorTwo();}
-                {!lockThree && changeColorThree();}
-                {!lockFour && changeColorFour();}
+                {!lock.lockOne && changeColor('colorOne');}
+                {!lock.lockTwo && changeColor('colorTwo');}
+                {!lock.lockThree && changeColor('colorThree');}
+                {!lock.lockFour && changeColor('colorFour');}
             }}>
                 <h3>Reroll Colors</h3>
             </button>
