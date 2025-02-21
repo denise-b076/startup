@@ -5,7 +5,7 @@ import { useNavigate } from 'react-router-dom';
 
 export function Palette({ color, setColor, userName}) {
     const navigate = useNavigate();
-    const [paletteName, setPaletteName] = React.useState('none');
+    const [paletteName, setPaletteName] = React.useState('');
     const [lock, setLock] = React.useState({
         lockOne: false,
         lockColorOne: "white",
@@ -136,7 +136,7 @@ export function Palette({ color, setColor, userName}) {
                     <span className="input-group-text">Palette Name</span>
                     <input className="form-control" type="text" onChange={(e) => setPaletteName(e.target.value)} placeholder="type here" />
                 </div>
-                <Button onClick={() => {
+                <Button disabled={!paletteName} onClick={() => {
                     navigate('/gallery')
                     savePalette(paletteName, color);
                 }
