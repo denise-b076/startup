@@ -27,7 +27,6 @@ export function Palette({ color, setColor, userName}) {
         else {
             setColor(color => ({...color, fromTable: false}));
         }
-        console.log(color.fromTable);
       }, []);
 
     const changeLock = (number, color) => {
