@@ -36,7 +36,7 @@ export function Palette({ color, setColor, userName}) {
     async function savePalette(palette_name, color){
         const date = new Date().toLocaleDateString();
         const newPalette = { 
-            palette: palette_name, 
+            name: palette_name, 
             first: color.colorOne, 
             second: color.colorTwo,
             third: color.colorThree, 

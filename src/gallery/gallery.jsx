@@ -3,6 +3,42 @@ import Button from 'react-bootstrap/Button';
 import './gallery.css';
 
 export function Gallery() {
+    const [palettes, setPalettes] = React.useState([]);
+
+    React.useEffect(() => {
+        const galleryText = localStorage.getItem('gallery');
+        if (galleryText) {
+            setPalettes(JSON.parse(galleryText));
+        }
+    }, []);
+
+    const galleryRows = [];
+    if (palettes.length) {
+        for (const [i, palette] of palettes.entries()) {
+            galleryRows.push(
+                <tr key={i}>
+                    <td><Button id="gallery_button" variant="link" href="/palette_maker">{palette.name}</Button></td>
+                    <td className="color_data">
+                        <div className="color_palette">
+                            <div style={{ backgroundColor: palette.first }} className="gallery_color"></div>                        
+                            <div style={{ backgroundColor: palette.second }} className="gallery_color"></div>                       
+                            <div style={{ backgroundColor: palette.third }} className="gallery_color"></div>                       
+                            <div style={{ backgroundColor: palette.fourth }} className="gallery_color"></div>
+                        </div>                        
+                    </td>
+                    <td>{palette.date}</td>
+                </tr>
+            );
+        }
+    }
+    else {
+        galleryRows.push(
+            <tr key='0'>
+                <td colSpan='4'>Make a splash of color in the palette maker!</td>
+            </tr>
+        );
+    }
+
   return (
     <main className="container-fluid text-center">
         <table id="gallery_table" className="table table-striped-columns">
@@ -13,43 +49,8 @@ export function Gallery() {
                     <th><b>Date Created</b></th>
                 </tr>
             </thead>
-            <tbody>
-                <tr>
-                    <td><Button id="gallery_button" variant="link" href="/palette_maker">"Clown Culture"</Button></td>
-                    <td className="color_data">
-                        <div className="color_palette">
-                            <div id="color_one" className="gallery_color"></div>                        
-                            <div id="color_two" className="gallery_color"></div>                       
-                            <div id="color_three" className="gallery_color"></div>                       
-                            <div id="color_four" className="gallery_color"></div>
-                        </div>                        
-                    </td>
-                    <td>1/25/25</td>
-                </tr>
-                <tr>
-                    <td><Button id="gallery_button" variant="link" href="/palette_maker">"Emerald City"</Button></td>
-                    <td className="color_data">
-                        <div className="color_palette">
-                            <div id="color_five" className="gallery_color"></div>                        
-                            <div id="color_six" className="gallery_color"></div>                       
-                            <div id="color_seven" className="gallery_color"></div>                       
-                            <div id="color_eight" className="gallery_color"></div>
-                        </div>                        
-                    </td>
-                    <td>12/25/24</td>
-                </tr>
-                <tr>
-                    <td><Button id="gallery_button" variant="link" href="/palette_maker">"Bluesky"</Button></td>
-                    <td className="color_data">
-                        <div className="color_palette">
-                            <div id="color_nine" className="gallery_color"></div>                        
-                            <div id="color_ten" className="gallery_color"></div>                       
-                            <div id="color_eleven" className="gallery_color"></div>                       
-                            <div id="color_twelve" className="gallery_color"></div>
-                        </div>                        
-                    </td>
-                    <td>11/12/24</td>
-                </tr>
+            <tbody id='palettes'>
+                {galleryRows}
             </tbody>
         </table>
     </main>
