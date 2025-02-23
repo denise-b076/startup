@@ -21,7 +21,7 @@ export function Inspire({color, setColor}) {
             const date = new Date().toLocaleDateString();
             const userName = 'bruceWayne';
             createPalette(userName, date);
-        }, 10000);
+        }, 70000);
 
         const inspireText = localStorage.getItem('inspire');
         if (inspireText) {
