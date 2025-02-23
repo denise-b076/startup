@@ -6,6 +6,7 @@ import { useNavigate } from 'react-router-dom';
 export function Gallery({ setColor }) {
     const [palettes, setPalettes] = React.useState([]);
     const navigate = useNavigate();
+    const galleryRows = [];
 
     React.useEffect(() => {
         const galleryText = localStorage.getItem('gallery');
@@ -14,7 +15,6 @@ export function Gallery({ setColor }) {
         }
     }, []);
 
-    const galleryRows = [];
     if (palettes.length) {
         for (const [i, palette] of palettes.entries()) {
             galleryRows.push(

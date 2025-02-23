@@ -3,7 +3,7 @@ import Button from 'react-bootstrap/Button';
 import "./palette_maker.css";
 import { useNavigate } from 'react-router-dom';
 
-export function Palette({ color, setColor, userName}) {
+export function Palette({ color, setColor, userName }) {
     const navigate = useNavigate();
     const [paletteName, setPaletteName] = React.useState('');
     const [lock, setLock] = React.useState({
@@ -35,7 +35,7 @@ export function Palette({ color, setColor, userName}) {
 
     function changeColor(color_number) {
         let randomColor = Math.floor(Math.random() * 16777215).toString(16);
-        setColor(color => ({...color, [color_number]: "#" + randomColor}));
+        setColor((color) => ({...color, [color_number]: "#" + randomColor}));
     }
 
     async function savePalette(palette_name, color){
