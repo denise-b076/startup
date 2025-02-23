@@ -55,7 +55,10 @@ export default function App() {
             setColor={setColor}
             userName={userName}
             />} />
-            <Route path='/inspire' element={<Inspire />} />
+            <Route path='/inspire' element={<Inspire 
+            color={color}
+            setColor={setColor}
+            />} />
             <Route path='*' element={<NotFound />} />
         </Routes>
 
