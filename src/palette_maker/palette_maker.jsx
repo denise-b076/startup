@@ -65,7 +65,7 @@ export function Palette({ color, setColor, userName }) {
         </div>
         <div className="content">
             <div className="palette_table">
-                <div id="color_one" className="colors" style={{background: color.colorOne}}>
+                <div id="color_one" className="colors" style={{background: color.colorOne || '#444444'}}>
                     <div className="color_info">
                         <button id="unlock" className="btn btn-secondary"
                         style={{ background: lock.lockColorOne}} 
@@ -75,11 +75,11 @@ export function Palette({ color, setColor, userName }) {
                             <span>🔓</span>
                         </button>
                         <div className="color_name">
-                            <span className="color_hex">{color.colorOne}</span>
+                        <input className="form-control" type="text" value={color.colorOne} onChange={(e) => setColor((color) => ({...color, colorOne: e.target.value}))} placeholder='#444444' />
                         </div>
                     </div>
                 </div>
-                <div id="color_two" className="colors" style={{background: color.colorTwo}}>
+                <div id="color_two" className="colors" style={{background: color.colorTwo || '#444444'}}>
                     <div className="color_info">
                         <button id="unlock" className="btn btn-secondary"
                         style={{ background: lock.lockColorTwo}} 
@@ -89,11 +89,11 @@ export function Palette({ color, setColor, userName }) {
                             <span>🔓</span>
                         </button>
                         <div className="color_name">
-                            <span className="color_hex">{color.colorTwo}</span>
+                        <input className="form-control" type="text" value={color.colorTwo} onChange={(e) => setColor((color) => ({...color, colorTwo: e.target.value}))} placeholder='#444444' />
                         </div>
                     </div>
                 </div>
-                <div id="color_three" className="colors" style={{background: color.colorThree}}>
+                <div id="color_three" className="colors" style={{background: color.colorThree || '#444444'}}>
                     <div className="color_info">
                         <button id="unlock" className="btn btn-secondary"
                         style={{ background: lock.lockColorThree}} 
@@ -103,11 +103,11 @@ export function Palette({ color, setColor, userName }) {
                             <span>🔓</span>
                         </button>
                         <div className="color_name">
-                            <span className="color_hex">{color.colorThree}</span>
+                        <input className="form-control" type="text" value={color.colorThree} onChange={(e) => setColor((color) => ({...color, colorThree: e.target.value}))} placeholder='#444444' />
                         </div>
                     </div>
                 </div>
-                <div id="color_four" className="colors" style={{background: color.colorFour}}>
+                <div id="color_four" className="colors" style={{background: color.colorFour || '#444444'}}>
                     <div className="color_info">
                         <button id="unlock" className="btn btn-secondary"
                         style={{ background: lock.lockColorFour}} 
@@ -117,7 +117,8 @@ export function Palette({ color, setColor, userName }) {
                             <span>🔓</span>
                         </button>
                         <div className="color_name">
-                            <span className="color_hex">{color.colorFour}</span>
+                            {/* <span className="color_hex" >{color.colorFour}</span> */}
+                            <input className="form-control" type="text" value={color.colorFour} onChange={(e) => setColor((color) => ({...color, colorFour: e.target.value}))} placeholder='#444444' />
                         </div>
                     </div>
                 </div>
