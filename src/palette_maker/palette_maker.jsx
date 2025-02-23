@@ -53,7 +53,7 @@ export function Palette({ color, setColor, userName }) {
     
     function updateGallery(newPalette){
         let gallery = JSON.parse(localStorage.getItem('gallery')) || [];
-        gallery.push(newPalette);
+        gallery.unshift(newPalette);
         localStorage.setItem('gallery', JSON.stringify(gallery));
     }
 
