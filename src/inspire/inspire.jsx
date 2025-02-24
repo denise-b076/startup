@@ -70,6 +70,10 @@ export function Inspire({color, setColor}) {
                     onClick={() => {
                     navigate('/palette_maker')
                     setColor(() => ({colorOne: palette.first, colorTwo: palette.second, colorThree: palette.third, colorFour: palette.fourth, fromTable: true}));
+                    localStorage.setItem('colorOne', palette.first);
+                    localStorage.setItem('colorTwo', palette.second);
+                    localStorage.setItem('colorThree', palette.third);
+                    localStorage.setItem('colorFour', palette.fourth);
                 }
             }
                 >{palette.name}</Button></td>

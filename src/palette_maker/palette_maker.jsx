@@ -5,6 +5,10 @@ import { useNavigate } from 'react-router-dom';
 
 export function Palette({ color, setColor, userName }) {
     const navigate = useNavigate();
+    const firstVisitStorage = localStorage.getItem('firstVisit') || true;
+    const storageBool = firstVisitStorage === true;
+    const firstBoolAnd = color.firstVisit && storageBool;
+    const firstBoolOr = !color.firstVisit || !storageBool;
     const [paletteName, setPaletteName] = React.useState('');
     const [lock, setLock] = React.useState({
         lockOne: false,
@@ -24,11 +28,22 @@ export function Palette({ color, setColor, userName }) {
     && paletteName;
 
     React.useEffect(() => {
-        if (!color.fromTable){
+        if (!color.fromTable && firstBoolAnd){
             changeColor('colorOne');
             changeColor('colorTwo');
             changeColor('colorThree');
             changeColor('colorFour');
+            setColor(color => ({...color, firstVisit: false}))
+            localStorage.setItem('firstVisit', false);
+        }
+        else if (!color.fromTable && firstBoolOr) {
+            console.log('me when');
+            setColor(color => ({...color, 
+            colorOne: localStorage.getItem('colorOne'),
+            colorTwo: localStorage.getItem('colorTwo'),
+            colorThree: localStorage.getItem('colorThree'),
+            colorFour: localStorage.getItem('colorFour'),
+            }))
         }
         else {
             setColor(color => ({...color, fromTable: false}));
@@ -41,10 +56,11 @@ export function Palette({ color, setColor, userName }) {
 
     function changeColor(color_number) {
         let randomColor = 'ff';
-        while (randomColor.length < 6) {
-            randomColor = Math.floor(Math.random() * 16777215).toString(16);
+        while (randomColor.length < 7) {
+            randomColor = '#' + Math.floor(Math.random() * 16777215).toString(16);
         }
-        setColor((color) => ({...color, [color_number]: "#" + randomColor}));
+        setColor((color) => ({...color, [color_number]: randomColor}));
+        localStorage.setItem(color_number, randomColor);
     }
 
     async function savePalette(palette_name, color){

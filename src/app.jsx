@@ -13,11 +13,12 @@ export default function App() {
     const currentAuthState = userName ? AuthState.Authenticated : AuthState.Unauthenticated;
     const [authState, setAuthState] = React.useState(currentAuthState);
     const [color, setColor] = React.useState({
-        colorOne: "red",
-        colorTwo: "red",
-        colorThree: "red",
-        colorFour: "red",
-        fromTable: false
+        colorOne: localStorage.getItem('colorOne') || "red",
+        colorTwo: localStorage.getItem('colorTwo') || "red",
+        colorThree: localStorage.getItem('colorThree') || "red",
+        colorFour: localStorage.getItem('colorFour') || "red",
+        fromTable: false,
+        firstVisit: true
     }
     );
 
