@@ -19,8 +19,9 @@ export function Inspire({color, setColor}) {
             }));
 
             const date = new Date().toLocaleDateString();
-            const userName = 'bruceWayne';
-            createPalette(userName, date);
+            const names = ['tomBrady', 'chuckNorris', 'bruceWayne'];
+            const randomName = names[Math.floor(Math.random() * names.length)];
+            createPalette(randomName, date);
             console.log('accessed');
         }, 7000);
 
@@ -43,7 +44,7 @@ export function Inspire({color, setColor}) {
 
     async function createPalette(userName, date) {
         const newPalette = { 
-            name: 'Palette',
+            name: 'Palette ' + userName,
             user: userName,
             first: color.colorOne, 
             second: color.colorTwo,
