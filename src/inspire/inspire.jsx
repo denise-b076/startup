@@ -21,7 +21,8 @@ export function Inspire({color, setColor}) {
             const date = new Date().toLocaleDateString();
             const userName = 'bruceWayne';
             createPalette(userName, date);
-        }, 70000);
+            console.log('accessed');
+        }, 7000);
 
         const inspireText = localStorage.getItem('inspire');
         if (inspireText) {
@@ -32,7 +33,10 @@ export function Inspire({color, setColor}) {
     }, [color]);
 
     function changeColorInspire() {
-        let randomColor = Math.floor(Math.random() * 16777215).toString(16);
+        let randomColor = 'ff';
+        while (randomColor.length < 6) {
+            randomColor = Math.floor(Math.random() * 16777215).toString(16);
+        }
         randomColor = '#' + randomColor;
         return randomColor;
     }

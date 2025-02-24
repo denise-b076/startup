@@ -34,7 +34,10 @@ export function Palette({ color, setColor, userName }) {
       };
 
     function changeColor(color_number) {
-        let randomColor = Math.floor(Math.random() * 16777215).toString(16);
+        let randomColor = 'ff';
+        while (randomColor.length < 6) {
+            randomColor = Math.floor(Math.random() * 16777215).toString(16);
+        }
         setColor((color) => ({...color, [color_number]: "#" + randomColor}));
     }
 
