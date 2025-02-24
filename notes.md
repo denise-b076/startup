@@ -72,4 +72,4 @@ You can also reference other public stylesheets, known as CSS Frameworks, to giv
 Some parts of CSS focus on how an object looks, such as `background-color` or `font-style`. Others focus on an object's position on the page, such as `display:flex` or `padding`. By putting all of these elements together, you can make a webpage that is much more appealing to the user's eye.
 
 ## React Notes
-React allows JavaScript and HTML to be used together. This includes routing pages and adding JavaScript functions to HTML elements.
+React allows JavaScript and HTML to be used together. This includes routing pages and adding JavaScript functions to HTML elements. By bundling the two together, yu can make the way your application looks dependent on JavaScript functions, and allow the way you interact with HTML elements call functions, such as pressing a button changing a value. 

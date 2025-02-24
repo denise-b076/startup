@@ -119,8 +119,8 @@ For this deliverable I did the following. I checked the box `[x]` and added a de
 
 For this deliverable I did the following. I checked the box `[x]` and added a description for things I completed.
 
-- [ ] **All functionality implemented or mocked out** - I did not complete this part of the deliverable.
-- [ ] **Hooks** - I did not complete this part of the deliverable.
+- [x] **All functionality implemented or mocked out** - All of what I described in part one has been implemented. Now, once you put in a login, you can go to any of the other three pages. The palette maker generates colors, and will save them to the gallery page with a given palette name. Clicking this name will bring up the colors and hex codes the way they were saved. The Inspire tab mocks out Websocket by randomly generating palettes every 7 seconds and showing them. The names of these palettes can also be clicked to bring up the colors and hexcodes in the palette maker.
+- [x] **Hooks** - I use the `useState` and `useEffect` hooks throughout my code, such as setting up the changes to palettes and colors, and rerendering pages according to those changes when specified in the code.
 
 ## 🚀 Service deliverable
 
