@@ -51,6 +51,7 @@ export function Palette({ color, setColor, userName }) {
         const date = new Date().toLocaleDateString();
         const newPalette = { 
             name: palette_name, 
+            user: userName,
             first: color.colorOne, 
             second: color.colorTwo,
             third: color.colorThree, 
