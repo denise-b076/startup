@@ -16,6 +16,12 @@ export function Palette({ color, setColor, userName }) {
         lockFour: false,
         lockColorFour: "white"
     });
+    const allValuesInPalette = 
+    color.colorOne != '' 
+    && color.colorTwo != '' 
+    && color.colorThree != '' 
+    && color.colorFour != '' 
+    && paletteName;
 
     React.useEffect(() => {
         if (!color.fromTable){
@@ -120,7 +126,6 @@ export function Palette({ color, setColor, userName }) {
                             <span>🔓</span>
                         </button>
                         <div className="color_name">
-                            {/* <span className="color_hex" >{color.colorFour}</span> */}
                             <input className="form-control" type="text" value={color.colorFour} onChange={(e) => setColor((color) => ({...color, colorFour: e.target.value}))} placeholder='#444444' />
                         </div>
                     </div>
@@ -140,7 +145,7 @@ export function Palette({ color, setColor, userName }) {
                     <span className="input-group-text">Palette Name</span>
                     <input className="form-control" type="text" onChange={(e) => setPaletteName(e.target.value)} placeholder="type here" />
                 </div>
-                <Button disabled={!paletteName} onClick={() => {
+                <Button disabled={!allValuesInPalette} onClick={() => {
                     navigate('/gallery')
                     savePalette(paletteName, color);
                 }
