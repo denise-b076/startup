@@ -2,6 +2,7 @@ import React from 'react';
 import Button from 'react-bootstrap/Button';
 import "./palette_maker.css";
 import { useNavigate } from 'react-router-dom';
+import { randomizeColor, savePalette } from '../utilities';
 
 export function Palette({ color, setColor, userName }) {
     const navigate = useNavigate();
@@ -37,7 +38,6 @@ export function Palette({ color, setColor, userName }) {
             localStorage.setItem('firstVisit', false);
         }
         else if (!color.fromTable && firstBoolOr) {
-            console.log('me when');
             setColor(color => ({...color, 
             colorOne: localStorage.getItem('colorOne'),
             colorTwo: localStorage.getItem('colorTwo'),
@@ -55,32 +55,9 @@ export function Palette({ color, setColor, userName }) {
       };
 
     function changeColor(color_number) {
-        let randomColor = 'ff';
-        while (randomColor.length < 7) {
-            randomColor = '#' + Math.floor(Math.random() * 16777215).toString(16);
-        }
+        let randomColor = randomizeColor();
         setColor((color) => ({...color, [color_number]: randomColor}));
         localStorage.setItem(color_number, randomColor);
-    }
-
-    async function savePalette(palette_name, color){
-        const date = new Date().toLocaleDateString();
-        const newPalette = { 
-            name: palette_name, 
-            user: userName,
-            first: color.colorOne, 
-            second: color.colorTwo,
-            third: color.colorThree, 
-            fourth: color.colorFour,
-            date: date 
-        };
-        updateGallery(newPalette);
-    }
-    
-    function updateGallery(newPalette){
-        let gallery = JSON.parse(localStorage.getItem('gallery')) || [];
-        gallery.unshift(newPalette);
-        localStorage.setItem('gallery', JSON.stringify(gallery));
     }
 
   return (
@@ -164,7 +141,7 @@ export function Palette({ color, setColor, userName }) {
                 </div>
                 <Button disabled={!allValuesInPalette} onClick={() => {
                     navigate('/gallery')
-                    savePalette(paletteName, color);
+                    savePalette(paletteName, color, 'gallery', userName);
                 }
                 }>Save to Gallery
                 </Button>

@@ -1,28 +1,27 @@
 import React from 'react';
-import Button from 'react-bootstrap/Button';
 import "./inspire.css";
 import { useNavigate } from 'react-router-dom';
+import { randomizeColor, savePalette } from '../utilities';
+import { empty, tableMaker } from '../tableMaker';
 
 export function Inspire({color, setColor}) {
     const [inspireData, setInspireData] = React.useState([]);
+    const [inspireRows, setInspireRows] = React.useState([]);
     const navigate = useNavigate();
-    const inspireRows = [];
 
     React.useEffect(() => {
         const intervalId = setInterval(() => {
             setColor((color) => ({
                 ...color,
-                colorOne: changeColorInspire(),
-                colorTwo: changeColorInspire(),
-                colorThree: changeColorInspire(),
-                colorFour: changeColorInspire(),
+                colorOne: randomizeColor(),
+                colorTwo: randomizeColor(),
+                colorThree: randomizeColor(),
+                colorFour: randomizeColor(),
             }));
 
-            const date = new Date().toLocaleDateString();
             const names = ['tomBrady', 'chuckNorris', 'bruceWayne'];
             const randomName = names[Math.floor(Math.random() * names.length)];
-            createPalette(randomName, date);
-            console.log('accessed');
+            savePalette(`Palette ${randomName}`, color, 'inspire', randomName);
         }, 7000);
 
         const inspireText = localStorage.getItem('inspire');
@@ -33,75 +32,14 @@ export function Inspire({color, setColor}) {
         return () => clearInterval(intervalId);
     }, [color]);
 
-    function changeColorInspire() {
-        let randomColor = 'ff';
-        while (randomColor.length < 6) {
-            randomColor = Math.floor(Math.random() * 16777215).toString(16);
+    React.useEffect(() => {
+        if (inspireData.length) {
+            const recentInspireData = inspireData.slice(0,12);
+            setInspireRows(tableMaker(recentInspireData, 'inspire', navigate, setColor)); // Update rows only when data changes
+        } else {
+            setInspireRows(empty('Where could the artists be?')); // Handle empty state
         }
-        randomColor = '#' + randomColor;
-        return randomColor;
-    }
-
-    async function createPalette(userName, date) {
-        const newPalette = { 
-            name: 'Palette ' + userName,
-            user: userName,
-            first: color.colorOne, 
-            second: color.colorTwo,
-            third: color.colorThree, 
-            fourth: color.colorFour,
-            date: date 
-        };
-        updateInspire(newPalette);
-    }
-
-    function updateInspire(newPalette){
-        let inspire = JSON.parse(localStorage.getItem('inspire')) || [];
-        inspire.unshift(newPalette);
-        localStorage.setItem('inspire', JSON.stringify(inspire));
-    }
-
-    if (inspireData.length) {
-        const recentInspireData = inspireData.slice(0,12);
-        for (const [i, palette] of recentInspireData.entries()) {
-            inspireRows.push(
-                <tr key={i}>
-                    <td>{palette.user}</td>
-                    <td><Button id="inspire_button" variant='link'
-                    onClick={() => {
-                    navigate('/palette_maker')
-                    setColor(() => ({colorOne: palette.first, colorTwo: palette.second, colorThree: palette.third, colorFour: palette.fourth, fromTable: true}));
-                    localStorage.setItem('colorOne', palette.first);
-                    localStorage.setItem('colorTwo', palette.second);
-                    localStorage.setItem('colorThree', palette.third);
-                    localStorage.setItem('colorFour', palette.fourth);
-                }
-            }
-                >{palette.name}</Button></td>
-                    <td className="color_data">
-                        <div className="color_palette">
-                            <div style={{ backgroundColor: palette.first }} className="inspire_color"></div>                        
-                            <div style={{ backgroundColor: palette.second }} className="inspire_color"></div>                       
-                            <div style={{ backgroundColor: palette.third }} className="inspire_color"></div>                       
-                            <div style={{ backgroundColor: palette.fourth }} className="inspire_color"></div>
-                        </div>                        
-                    </td>
-                    <td>{palette.date}</td>
-                </tr>
-            );
-        }
-        
-        if (inspireRows.length > 12) {
-            inspireRows = inspireRows.slice[1,12];
-        }
-    }
-    else {
-        inspireRows.push(
-            <tr key='0'>
-                <td colSpan='4'>Where could the artists be?</td>
-            </tr>
-        );
-    }
+      }, [inspireData]);
 
   return (
     <main className="container-fluid text-center">
