@@ -40,6 +40,37 @@ apiRouter.get('/palettes/gallery', (_req, res) =>{
     res.send(galleryPalettes);
 });
 
+apiRouter.post('/palette/gallery', verifyAuth, (req, res) => {
+    galleryPalettes = updatePalettes(req.body, galleryPalettes);
+    res.send(galleryPalettes);
+});
+
 apiRouter.get('/palettes/inspire', (_req, res) => {
     res.send(inspirePalettes);
 });
+
+apiRouter.post('/palette/inspire', verifyAuth, (req, res) => {
+    inspirePalettes = updatePalettes(req.body, inspirePalettes);
+    res.send(inspirePalettes);
+});
+
+async function findUser(field, value) {
+    if (!value) return null;
+
+    return users.find((users) => users[field === value]);
+}
+
+const verifyAuth = async (req, res, next) => {
+    const user = await findUser('token', req.cookies[authCookieName]);
+    if (user) {
+        next();
+    }
+    else {
+        res.status(401).send({ msg: 'Unauthorized'});
+    }
+};
+
+function updatePalettes(newPalette, table){
+    table.unshift(newPalette);
+    return table;
+}
