@@ -8,7 +8,16 @@ export function Login({ userName, authState, onAuthChange }) {
   const [imageUrl, setImageUrl] = React.useState('data:image/gif;base64,R0lGODlhAQABAIAAAAUEBAAAACwAAAAAAQABAAACAkQBADs=');
 
   React.useEffect(() => {
-    setImageUrl(`placeholder.png`);
+    const random = Math.floor(Math.random() * 100);
+    console.log(random);
+    fetch(`https://api.artic.edu/api/v1/artworks/search?query[term][is_public_domain]=true&limit=1&page=${random}&fields=id,title,image_id`)
+      .then((response) => response.json())
+      .then((responseData) => {
+        const apiUrl = `${responseData.config.iiif_url}/${responseData.data[0].image_id}/full/843,/0/default.jpg`
+        setImageUrl(apiUrl);
+        console.log(responseData.data[0].title)
+      })
+      .catch();
   }, []);
   
   return (
