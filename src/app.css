@@ -121,12 +121,12 @@ footer a {
 
 @media (orientation: portrait) {
   .picture-box {
-    width: 100vw;
     height: auto;
   }
   #picture img{
     max-width: 100vw;
     height: auto;
+    max-height: 80vh;
   }
 }
 
