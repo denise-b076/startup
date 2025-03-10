@@ -101,9 +101,13 @@ app.use(function (err, req, res, next) {
   }
 
 async function findUser(field, value) {
-    if (!value) return null;
-
-    return users.find((users) => users[field === value]);
+    if (!value) {
+        return null;
+    
+    } 
+    else {
+        return users.find((users) => users[field] === value);
+    }
 }
 
 function updatePalettes(newPalette, table){
