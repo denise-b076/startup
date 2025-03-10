@@ -119,7 +119,7 @@ function updatePalettes(newPalette, paletteLocation) {
 
 function setAuthCookie(res, authToken) {
     res.cookie(authCookieName, authToken, {
-        secure: false,
+        secure: true,
         httpOnly: true,
         sameSite: 'strict'
     });
