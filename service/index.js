@@ -9,6 +9,8 @@ let users = [];
 let galleryPalettes = [];
 let inspirePalettes = [];
 
+const port = process.argv.length > 2 ? process.argv[2] : 3000;
+
 app.use(express.json());
 
 app.use(cookieParser());
@@ -54,6 +56,25 @@ apiRouter.post('/palette/inspire', verifyAuth, (req, res) => {
     res.send(inspirePalettes);
 });
 
+app.use(function (err, req, res, next) {
+    res.status(500).send({ type: err.name, message: err.message });
+  });
+  
+  app.use((_req, res) => {
+    res.sendFile('index.html', { root: 'public' });
+  });
+
+  async function createUser(email, password) {
+    const passwordHash = await bcrypt.hash(password, 10);
+    const user = {
+        email: email,
+        password: passwordHash,
+        token: uuid.v4(),
+    };
+    users.push(user);
+    return user;
+  }
+
 async function findUser(field, value) {
     if (!value) return null;
 
@@ -74,3 +95,15 @@ function updatePalettes(newPalette, table){
     table.unshift(newPalette);
     return table;
 }
+
+function setAuthCookie(res, authToken) {
+    res.cookie(authCookieName, authToken, {
+        secure: true,
+        httpOnly: true,
+        sameSite: 'strict'
+    });
+}
+
+app.listen(port, () => {
+    console.log(`Listening on port ${port}`);
+});
