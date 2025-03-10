@@ -73,3 +73,6 @@ Some parts of CSS focus on how an object looks, such as `background-color` or `f
 
 ## React Notes
 React allows JavaScript and HTML to be used together. This includes routing pages and adding JavaScript functions to HTML elements. By bundling the two together, yu can make the way your application looks dependent on JavaScript functions, and allow the way you interact with HTML elements call functions, such as pressing a button changing a value. 
+
+## Service Notes
+As part of the backend, the service allows you to call 'endpoints' to carry out functions, such as login or retrieving data.

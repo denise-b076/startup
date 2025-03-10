@@ -126,11 +126,11 @@ For this deliverable I did the following. I checked the box `[x]` and added a de
 
 For this deliverable I did the following. I checked the box `[x]` and added a description for things I completed.
 
-- [ ] **Node.js/Express HTTP service** - I did not complete this part of the deliverable.
-- [ ] **Static middleware for frontend** - I did not complete this part of the deliverable.
-- [ ] **Calls to third party endpoints** - I did not complete this part of the deliverable.
-- [ ] **Backend service endpoints** - I did not complete this part of the deliverable.
-- [ ] **Frontend calls service endpoints** - I did not complete this part of the deliverable.
+- [x] **Node.js/Express HTTP service** - done!
+- [x] **Static middleware for frontend** - done!
+- [x] **Calls to third party endpoints** - calls https://api.artic.edu/docs/ service to randomly select an artwork for the login page.
+- [x] **Backend service endpoints** - Placeholders for login that stores users on the server, endpoints for saving and retrieving palettes for the gallery or inspire tabs.
+- [x] **Frontend calls service endpoints** - I did this using the fetch function.
 
 ## 🚀 DB/Login deliverable
 
