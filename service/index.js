@@ -32,10 +32,16 @@ apiRouter.post('/auth/create', async (req, res) => {
 });
 
 apiRouter.post('/auth/login', async (req, res) => {
-    const user = {
-        email: 'a.braithw8@gmail.com'
+    const user = await findUser('email', req.body.email);
+    if (user) {
+        if (await bcrypt.compare(req.body.password, user.password)) {
+            user.token = uuid.v4();
+            setAuthCookie(res, user.token);
+            res.send({ email: user.email});
+            return;
+        }
     }
-    res.send({ email: user.email });
+    res.status(401).send({ msg: 'Unauthorized' });
 });
 
 apiRouter.delete('/auth/logout', async (req, res) =>{
