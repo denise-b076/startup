@@ -53,6 +53,16 @@ apiRouter.delete('/auth/logout', async (req, res) =>{
     res.status(204).end();
 });
 
+const verifyAuth = async (req, res, next) => {
+    const user = await findUser('token', req.cookies[authCookieName]);
+    if (user) {
+        next();
+    }
+    else {
+        res.status(401).send({ msg: 'Unauthorized'});
+    }
+};
+
 apiRouter.get('/palettes/gallery', (_req, res) =>{
     res.send(galleryPalettes);
 });
@@ -95,16 +105,6 @@ async function findUser(field, value) {
 
     return users.find((users) => users[field === value]);
 }
-
-const verifyAuth = async (req, res, next) => {
-    const user = await findUser('token', req.cookies[authCookieName]);
-    if (user) {
-        next();
-    }
-    else {
-        res.status(401).send({ msg: 'Unauthorized'});
-    }
-};
 
 function updatePalettes(newPalette, table){
     table.unshift(newPalette);
