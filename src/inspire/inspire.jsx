@@ -24,10 +24,11 @@ export function Inspire({color, setColor}) {
             savePalette(`Palette ${randomName}`, color, 'inspire', randomName);
         }, 7000);
 
-        const inspireText = localStorage.getItem('inspire');
-        if (inspireText) {
-            setInspireData(JSON.parse(inspireText));
-        }
+        fetch('/api/palettes/inspirePalettes')
+        .then((response) => response.json())
+        .then((palettes) => {
+            setInspireData(palettes);
+        });       
 
         return () => clearInterval(intervalId);
     }, [color]);
@@ -35,9 +36,9 @@ export function Inspire({color, setColor}) {
     React.useEffect(() => {
         if (inspireData.length) {
             const recentInspireData = inspireData.slice(0,12);
-            setInspireRows(tableMaker(recentInspireData, 'inspire', navigate, setColor)); // Update rows only when data changes
+            setInspireRows(tableMaker(recentInspireData, 'inspire', navigate, setColor));
         } else {
-            setInspireRows(empty('Where could the artists be?')); // Handle empty state
+            setInspireRows(empty('Where could the artists be?')); 
         }
       }, [inspireData]);
 

@@ -59,26 +59,22 @@ const verifyAuth = async (req, res, next) => {
         next();
     }
     else {
-        res.status(401).send({ msg: 'Unauthorized'});
+        res.status(401).send({ msg: 'Unauthorized here'});
     }
 };
 
-apiRouter.get('/palettes/gallery', (_req, res) =>{
-    res.send(galleryPalettes);
+apiRouter.get('/palettes/:paletteLocation', (_req, res) =>{
+    if (_req.params.paletteLocation === 'galleryPalettes') {
+        res.send(galleryPalettes);
+    }
+    else if (_req.params.paletteLocation === 'inspirePalettes') {
+        res.send(inspirePalettes);
+    }
 });
 
-apiRouter.post('/palette/gallery', verifyAuth, (req, res) => {
-    galleryPalettes = updatePalettes(req.body, galleryPalettes);
-    res.send(galleryPalettes);
-});
-
-apiRouter.get('/palettes/inspire', (_req, res) => {
-    res.send(inspirePalettes);
-});
-
-apiRouter.post('/palette/inspire', verifyAuth, (req, res) => {
-    inspirePalettes = updatePalettes(req.body, inspirePalettes);
-    res.send(inspirePalettes);
+apiRouter.post('/palette/:paletteLocation', verifyAuth, (req, res) => {
+    const paletteLocation = updatePalettes(req.body, req.params.paletteLocation);
+    res.send(paletteLocation);
 });
 
 app.use(function (err, req, res, next) {
@@ -110,14 +106,20 @@ async function findUser(field, value) {
     }
 }
 
-function updatePalettes(newPalette, table){
-    table.unshift(newPalette);
-    return table;
+function updatePalettes(newPalette, paletteLocation) {
+    if (paletteLocation === 'galleryPalettes') {
+        galleryPalettes.unshift(newPalette);
+        return galleryPalettes;
+    } else if (paletteLocation === 'inspirePalettes') {
+        inspirePalettes.unshift(newPalette);
+        return inspirePalettes;
+    }
 }
+
 
 function setAuthCookie(res, authToken) {
     res.cookie(authCookieName, authToken, {
-        secure: true,
+        secure: false,
         httpOnly: true,
         sameSite: 'strict'
     });

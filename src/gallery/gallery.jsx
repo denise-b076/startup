@@ -13,6 +13,11 @@ export function Gallery({ setColor }) {
         if (galleryText) {
             setGalleryData(JSON.parse(galleryText));
         }
+        fetch('/api/palettes/galleryPalettes')
+        .then((response) => response.json())
+        .then((palettes) => {
+            setGalleryData(palettes);
+        });
     }, []);
 
     React.useEffect(() => {

@@ -17,11 +17,21 @@ export async function savePalette(palette_name, color, location, userName){
         fourth: color.colorFour,
         date: date 
     };
-    updateGallery(newPalette, location);
-}
 
-function updateGallery(newPalette, location){
-    let stored = JSON.parse(localStorage.getItem(location)) || [];
-    stored.unshift(newPalette);
-    localStorage.setItem(location, JSON.stringify(stored));
+    if (location === 'gallery') {
+        await fetch('api/palette/galleryPalettes', {
+        method: 'POST',
+        headers: { 'content-type': 'application/json' },
+        body: JSON.stringify(newPalette),
+        credentials: 'same-origin',
+    });
+    }
+    else if (location === 'inspire') {
+        await fetch('api/palette/inspirePalettes', {
+        method: 'POST',
+        headers: { 'content-type': 'application/json' },
+        body: JSON.stringify(newPalette),
+        credentials: 'same-origin',
+    });
+    }
 }
