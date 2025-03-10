@@ -46,6 +46,8 @@ export default function App() {
                   setAuthState(authState);
                   setUserName(userName);
                 }}
+                color={color}
+                setColor={setColor}
             />} exact/>
             <Route path='/gallery' element={<Gallery 
             color={color}

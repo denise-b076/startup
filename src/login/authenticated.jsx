@@ -17,6 +17,11 @@ export function Authenticated(props) {
       .finally(() => {
         localStorage.removeItem('userName');
         localStorage.removeItem('firstVisit');
+        localStorage.removeItem('colorOne');
+        localStorage.removeItem('colorTwo');
+        localStorage.removeItem('colorThree');
+        localStorage.removeItem('colorFour');
+        props.setColor(color => ({...color, firstVisit: true}));
         props.onLogout();
       });
   }

@@ -4,7 +4,7 @@ import { Unauthenticated } from './unauthenticated';
 import { Authenticated } from './authenticated';
 import { AuthState } from './authState';
 
-export function Login({ userName, authState, onAuthChange }) {
+export function Login({ userName, authState, onAuthChange, color, setColor }) {
   const [imageUrl, setImageUrl] = React.useState('data:image/gif;base64,R0lGODlhAQABAIAAAAUEBAAAACwAAAAAAQABAAACAkQBADs=');
 
   React.useEffect(() => {
@@ -28,7 +28,7 @@ export function Login({ userName, authState, onAuthChange }) {
         <div className="login_form">
         {authState !== AuthState.Unknown && <h2>Welcome to Tint-Hint!</h2>}
         {authState === AuthState.Authenticated && (
-          <Authenticated userName={userName} onLogout={() => onAuthChange(userName, AuthState.Unauthenticated)} />
+          <Authenticated userName={userName} color={color} setColor={setColor}onLogout={() => onAuthChange(userName, AuthState.Unauthenticated)} />
         )}
         {authState === AuthState.Unauthenticated && (
           <Unauthenticated
