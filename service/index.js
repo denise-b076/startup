@@ -9,7 +9,7 @@ let users = [];
 let galleryPalettes = [];
 let inspirePalettes = [];
 
-const port = process.argv.length > 2 ? process.argv[2] : 3000;
+const port = process.argv.length > 2 ? process.argv[2] : 4000;
 
 app.use(express.json());
 
@@ -21,10 +21,14 @@ var apiRouter = express.Router();
 app.use(`/api`, apiRouter);
 
 apiRouter.post('/auth/create', async (req, res) => {
-    const user = {
-        email: 'a.braithw8@gmail.com'
+    if (await findUser('email', req.body.email)) {
+        res.status(409).send({ msg: 'Existing user' });
     }
-    res.send({ email: user.email });
+    else {
+        const user = await createUser(req.body.email, req.body.password);
+        setAuthCookie(res, user.token);
+        res.send({ email: user.email});
+    }
 });
 
 apiRouter.post('/auth/login', async (req, res) => {
