@@ -137,9 +137,9 @@ export function Palette({ color, setColor, userName }) {
             <form method="get">
                 <div className="input-group mb-3">
                     <span className="input-group-text">Palette Name</span>
-                    <input className="form-control" type="text" onChange={(e) => setPaletteName(e.target.value)} placeholder="type here" />
+                    <input className="form-control" type="text" onChange={(e) => setPaletteName(e.target.value)} placeholder="type name w/ 15 chars or less" />
                 </div>
-                <Button disabled={!allValuesInPalette} onClick={() => {
+                <Button disabled={!allValuesInPalette || paletteName.length > 15} onClick={() => {
                     navigate('/gallery');
                     savePalette(paletteName, color, 'gallery', userName);
                     savePalette(paletteName, color, 'inspire', userName);
