@@ -10,7 +10,7 @@ export async function savePalette(palette_name, color, location, userName){
     const date = new Date().toLocaleDateString();
     const newPalette = { 
         name: palette_name, 
-        user: userName,
+        user: userName.split('@')[0],
         first: color.colorOne, 
         second: color.colorTwo,
         third: color.colorThree, 

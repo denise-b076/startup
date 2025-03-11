@@ -6,7 +6,7 @@ const app = express();
 const authCookieName = 'token';
 
 let users = [];
-let galleryPalettes = [];
+// let galleryPalettes = [];
 let inspirePalettes = [];
 
 const port = process.argv.length > 2 ? process.argv[2] : 4000;
@@ -63,17 +63,19 @@ const verifyAuth = async (req, res, next) => {
     }
 };
 
-apiRouter.get('/palettes/:paletteLocation', (_req, res) =>{
+apiRouter.get('/palettes/:paletteLocation', verifyAuth, async (_req, res) =>{
+    const user = await findUser('token', _req.cookies[authCookieName]);
     if (_req.params.paletteLocation === 'galleryPalettes') {
-        res.send(galleryPalettes);
+        res.send(user.galleryPalettes);
     }
     else if (_req.params.paletteLocation === 'inspirePalettes') {
         res.send(inspirePalettes);
     }
 });
 
-apiRouter.post('/palette/:paletteLocation', verifyAuth, (req, res) => {
-    const paletteLocation = updatePalettes(req.body, req.params.paletteLocation);
+apiRouter.post('/palette/:paletteLocation', verifyAuth, async (req, res) => {
+    const user = await findUser('token', req.cookies[authCookieName]);
+    const paletteLocation = updatePalettes(req.body, req.params.paletteLocation, user);
     res.send(paletteLocation);
 });
 
@@ -91,6 +93,7 @@ app.use(function (err, req, res, next) {
         email: email,
         password: passwordHash,
         token: uuid.v4(),
+        galleryPalettes: [],
     };
     users.push(user);
     return user;
@@ -99,17 +102,16 @@ app.use(function (err, req, res, next) {
 async function findUser(field, value) {
     if (!value) {
         return null;
-    
     } 
     else {
         return users.find((users) => users[field] === value);
     }
 }
 
-function updatePalettes(newPalette, paletteLocation) {
+async function updatePalettes(newPalette, paletteLocation, user) {
     if (paletteLocation === 'galleryPalettes') {
-        galleryPalettes.unshift(newPalette);
-        return galleryPalettes;
+        user.galleryPalettes.unshift(newPalette);
+        return user.galleryPalettes;
     } else if (paletteLocation === 'inspirePalettes') {
         inspirePalettes.unshift(newPalette);
         return inspirePalettes;

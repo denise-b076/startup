@@ -140,8 +140,9 @@ export function Palette({ color, setColor, userName }) {
                     <input className="form-control" type="text" onChange={(e) => setPaletteName(e.target.value)} placeholder="type here" />
                 </div>
                 <Button disabled={!allValuesInPalette} onClick={() => {
-                    navigate('/gallery')
+                    navigate('/gallery');
                     savePalette(paletteName, color, 'gallery', userName);
+                    savePalette(paletteName, color, 'inspire', userName);
                 }
                 }>Save to Gallery
                 </Button>
