@@ -8,6 +8,7 @@ export function randomizeColor() {
 
 export async function savePalette(palette_name, color, location, userName){
     const date = new Date().toLocaleDateString();
+    const sortingDate = new Date();
     const newPalette = { 
         name: palette_name, 
         user: userName.split('@')[0],
@@ -15,7 +16,8 @@ export async function savePalette(palette_name, color, location, userName){
         second: color.colorTwo,
         third: color.colorThree, 
         fourth: color.colorFour,
-        date: date 
+        date: date,
+        sortingDate: sortingDate 
     };
 
     if (location === 'gallery') {

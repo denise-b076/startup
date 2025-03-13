@@ -34,6 +34,19 @@ async function updateUser(user) {
     await userCollection.updateOne({ email: user.email }, { $set: user });
 }
 
+async function addInspirePalette(palette) {
+    return inspireCollection.insertOne(palette);
+}
+
+function getRecentInspire() {
+    const query = {};
+    const options = {
+        sort: { sortingDate: -1 },
+        limit: 12,
+    };
+    const cursor = inspireCollection.find(query, options);
+    return cursor.toArray();
+}
 
 module.exports = {
     getUser,
