@@ -35,8 +35,7 @@ export function Inspire({color, setColor}) {
 
     React.useEffect(() => {
         if (inspireData.length) {
-            const recentInspireData = inspireData.slice(0,12);
-            setInspireRows(tableMaker(recentInspireData, 'inspire', navigate, setColor));
+            setInspireRows(tableMaker(inspireData, 'inspire', navigate, setColor));
         } else {
             setInspireRows(empty('Where could the artists be?')); 
         }
