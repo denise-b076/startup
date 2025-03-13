@@ -136,11 +136,11 @@ For this deliverable I did the following. I checked the box `[x]` and added a de
 
 For this deliverable I did the following. I checked the box `[x]` and added a description for things I completed.
 
-- [ ] **User registration** - I did not complete this part of the deliverable.
-- [ ] **User login and logout** - I did not complete this part of the deliverable.
-- [ ] **Stores data in MongoDB** - I did not complete this part of the deliverable.
-- [ ] **Stores credentials in MongoDB** - I did not complete this part of the deliverable.
-- [ ] **Restricts functionality based on authentication** - I did not complete this part of the deliverable.
+- [x] **User registration** - User can create a user on the login page and register
+- [x] **User login and logout** - User can login and logout on the login page
+- [x] **Stores data in MongoDB** - done! Saves inspire palette data as well as user gallery palettes
+- [x] **Stores credentials in MongoDB** - done! saves login information and tokens in 
+- [x] **Restricts functionality based on authentication** - done!
 
 ## 🚀 WebSocket deliverable
 
