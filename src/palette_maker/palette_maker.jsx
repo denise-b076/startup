@@ -78,7 +78,11 @@ export function Palette({ color, setColor, userName }) {
                             <span>🔓</span>
                         </button>
                         <div className="color_name">
-                        <input className="form-control" type="text" value={color.colorOne} onChange={(e) => setColor((color) => ({...color, colorOne: e.target.value}))} placeholder='#444444' />
+                        <input className="form-control" type="text" value={color.colorOne} onChange={(e) => {
+                                const newColor = e.target.value;
+                                setColor((color) => ({...color, colorOne: newColor}));
+                                localStorage.setItem('colorOne', newColor);
+                            }} placeholder='#444444' />
                         </div>
                     </div>
                 </div>
@@ -92,7 +96,11 @@ export function Palette({ color, setColor, userName }) {
                             <span>🔓</span>
                         </button>
                         <div className="color_name">
-                        <input className="form-control" type="text" value={color.colorTwo} onChange={(e) => setColor((color) => ({...color, colorTwo: e.target.value}))} placeholder='#444444' />
+                        <input className="form-control" type="text" value={color.colorTwo} onChange={(e) => {
+                                const newColor = e.target.value;
+                                setColor((color) => ({...color, colorTwo: newColor}));
+                                localStorage.setItem('colorTwo', newColor);
+                            }} placeholder='#444444' />
                         </div>
                     </div>
                 </div>
@@ -106,7 +114,11 @@ export function Palette({ color, setColor, userName }) {
                             <span>🔓</span>
                         </button>
                         <div className="color_name">
-                        <input className="form-control" type="text" value={color.colorThree} onChange={(e) => setColor((color) => ({...color, colorThree: e.target.value}))} placeholder='#444444' />
+                        <input className="form-control" type="text" value={color.colorThree} onChange={(e) => {
+                                const newColor = e.target.value;
+                                setColor((color) => ({...color, colorThree: newColor}));
+                                localStorage.setItem('colorThree', newColor);
+                            }} placeholder='#444444' />
                         </div>
                     </div>
                 </div>
@@ -120,7 +132,11 @@ export function Palette({ color, setColor, userName }) {
                             <span>🔓</span>
                         </button>
                         <div className="color_name">
-                            <input className="form-control" type="text" value={color.colorFour} onChange={(e) => setColor((color) => ({...color, colorFour: e.target.value}))} placeholder='#444444' />
+                            <input className="form-control" type="text" value={color.colorFour} onChange={(e) => {
+                                const newColor = e.target.value;
+                                setColor((color) => ({...color, colorFour: newColor}));
+                                localStorage.setItem('colorFour', newColor);
+                            }} placeholder='#444444' />
                         </div>
                     </div>
                 </div>
