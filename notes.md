@@ -76,3 +76,6 @@ React allows JavaScript and HTML to be used together. This includes routing page
 
 ## Service Notes
 As part of the backend, the service allows you to call 'endpoints' to carry out functions, such as login or retrieving data.
+
+## DB Notes
+Databases are a safe way to consistently store user data and credentials. There are many different kinds of databases for storing different kinds of data. My startup uses MongoDB to store JSON objects. The backend service endpoints call the database in order to retrieve, use, and set the objects. 
