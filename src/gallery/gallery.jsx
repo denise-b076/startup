@@ -9,16 +9,12 @@ export function Gallery({ setColor }) {
     const [galleryRows, setGalleryRows] = React.useState([]);
 
     React.useEffect(() => {
-        const galleryText = localStorage.getItem('gallery');
-        if (galleryText) {
-            setGalleryData(JSON.parse(galleryText));
-        }
         fetch('/api/palettes/galleryPalettes')
         .then((response) => response.json())
         .then((palettes) => {
             setGalleryData(palettes);
         });
-    }, []);
+    }, [galleryData]);
 
     React.useEffect(() => {
         if (galleryData.length) {
