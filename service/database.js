@@ -53,4 +53,6 @@ module.exports = {
     getUserByToken,
     addUser,
     updateUser,
+    addInspirePalette,
+    getRecentInspire,
 }

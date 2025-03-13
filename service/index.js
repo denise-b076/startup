@@ -6,10 +6,6 @@ const app = express();
 const DB = require('./database.js');
 const authCookieName = 'token';
 
-// let users = [];
-// // let galleryPalettes = [];
-let inspirePalettes = [];
-
 const port = process.argv.length > 2 ? process.argv[2] : 4000;
 
 app.use(express.json());
@@ -73,6 +69,7 @@ apiRouter.get('/palettes/:paletteLocation', verifyAuth, async (_req, res) =>{
         res.send(user.galleryPalettes);
     }
     else if (_req.params.paletteLocation === 'inspirePalettes') {
+        const inspirePalettes = await DB.getRecentInspire();
         res.send(inspirePalettes);
     }
 });
@@ -104,15 +101,6 @@ app.use(function (err, req, res, next) {
     return user;
   }
 
-// async function findUser(field, value) {
-//     if (!value) {
-//         return null;
-//     } 
-//     else {
-//         return users.find((users) => users[field] === value);
-//     }
-// }
-
 async function findUser(field, value) {
     if (!value) return null;
   
@@ -128,15 +116,15 @@ async function updatePalettes(newPalette, paletteLocation, user) {
         DB.updateUser(user);
         return user.galleryPalettes;
     } else if (paletteLocation === 'inspirePalettes') {
-        inspirePalettes.unshift(newPalette);
-        return inspirePalettes;
+        await DB.addInspirePalette(newPalette);
+        return DB.getRecentInspire();
     }
 }
 
 
 function setAuthCookie(res, authToken) {
     res.cookie(authCookieName, authToken, {
-        secure: true,
+        secure: false,
         httpOnly: true,
         sameSite: 'strict'
     });
