@@ -79,7 +79,7 @@ apiRouter.get('/palettes/:paletteLocation', verifyAuth, async (_req, res) =>{
 
 apiRouter.post('/palette/:paletteLocation', verifyAuth, async (req, res) => {
     const user = await findUser('token', req.cookies[authCookieName]);
-    const paletteLocation = updatePalettes(req.body, req.params.paletteLocation, user);
+    const paletteLocation = await updatePalettes(req.body, req.params.paletteLocation, user);
     res.send(paletteLocation);
 });
 
