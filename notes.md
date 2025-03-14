@@ -10,7 +10,7 @@
 
 ## GitHub Notes
 
-[Information found here](notes.md)
+[Information found here](github.md)
 
 ## Specification Notes
 In order to stay organized and consistent while creating a web application, it is important to specify what it should be doing, even before beginning to code. This can include many elements, but the ones I will be referencing include:
