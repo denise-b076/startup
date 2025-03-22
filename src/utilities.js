@@ -1,3 +1,5 @@
+import { AppEvent, AppNotifier } from './appNotifier';
+
 export function randomizeColor() {
     let randomColor = 'ff';
     while (randomColor.length < 7) {
@@ -36,4 +38,6 @@ export async function savePalette(palette_name, color, location, userName){
         credentials: 'same-origin',
     });
     }
+
+    AppNotifier.broadcastEvent(userName, AppEvent.User, {});
 }
