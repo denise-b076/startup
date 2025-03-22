@@ -146,8 +146,8 @@ For this deliverable I did the following. I checked the box `[x]` and added a de
 
 For this deliverable I did the following. I checked the box `[x]` and added a description for things I completed.
 
-- [ ] **Backend listens for WebSocket connection** - I did not complete this part of the deliverable.
-- [ ] **Frontend makes WebSocket connection** - I did not complete this part of the deliverable.
-- [ ] **Data sent over WebSocket connection** - I did not complete this part of the deliverable.
-- [ ] **WebSocket data displayed** - I did not complete this part of the deliverable.
-- [ ] **Application is fully functional** - I did not complete this part of the deliverable.
+- [x] **Backend listens for WebSocket connection** - done!
+- [x] **Frontend makes WebSocket connection** - done!
+- [x] **Data sent over WebSocket connection** - done!
+- [x] **WebSocket data displayed** - done!
+- [x] **Application is fully functional** - Palettes can be saved by the user, and recent palettes from all users update in real time in the inspire tab. Palettes saved in either the gallery or the inspire can be accessed and viewed in the palette maker, and re-saved into new palettes.
