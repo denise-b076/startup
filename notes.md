@@ -79,3 +79,6 @@ As part of the backend, the service allows you to call 'endpoints' to carry out 
 
 ## DB Notes
 Databases are a safe way to consistently store user data and credentials. There are many different kinds of databases for storing different kinds of data. My startup uses MongoDB to store JSON objects. The backend service endpoints call the database in order to retrieve, use, and set the objects. 
+
+## WebSocket Notes
+Prior to WebSocket, application servers could only send information to users if the users made a call to the backend. Now, by upgrading the HTTP connection with WebSocket, the server can send information unprompted by a user. This can be further expanded by having calls from other users cause the server to send information to other users, such as notifications. By integrating WebSocket, applications are not only reactive, but also responsive. My startup uses WebSocket to hotreload the inspire tab for all users on the tab when any user creates a palette.
