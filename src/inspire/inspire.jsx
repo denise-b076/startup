@@ -17,7 +17,6 @@ export function Inspire({setColor}) {
             setInspireData(palettes);
         }); 
         AppNotifier.addHandler(handleAppEvent);
-        reload();
 
         return () => {
             AppNotifier.removeHandler(handleAppEvent);
@@ -34,6 +33,7 @@ export function Inspire({setColor}) {
 
     function handleAppEvent(event) {
         setEvent([...events, event]);
+        reload();
     }
 
     function reload() {
